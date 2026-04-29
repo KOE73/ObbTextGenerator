@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>ObbTextGenerator.PaddleDet</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputPath>..\ObbTextGenerator\bin\$(Configuration)\$(TargetFramework)\Plugins\ObbTextGenerator.PaddleDet\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NeuroModFlowNet.ONNX" Version="0.1.2" />
+    <PackageReference Include="OpenCvSharp4" Version="4.13.0.20260330" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.13.0.20260302" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ObbTextGenerator\ObbTextGenerator.csproj" />
+  </ItemGroup>
+
+  <Target Name="CopyOnnxRuntimeNativeLibrariesToPluginRoot" AfterTargets="Build">
+    <ItemGroup>
+      <OnnxRuntimeNativeLibraries Include="$(OutputPath)runtimes\win-x64\native\onnxruntime*.dll" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(OnnxRuntimeNativeLibraries)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

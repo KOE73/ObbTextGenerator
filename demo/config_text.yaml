@@ -1,0 +1,377 @@
+﻿# Public text generation demo.
+# Run GenWithText.cmd from any folder.
+# All generated files go to ../LocalArtifacts/GenData.
+
+general:
+  width: 640
+  height: 640
+  sampleCount: 20000
+  outputRoot: "../LocalArtifacts/GenData"
+  resourceRoot: "Resources"
+  trainSplit: 0.8
+  maxParallelism: 16
+
+schemes:
+  - name: "neutral-demo"
+    roles:
+      scene_bg: { type: random, r: [214, 246], g: [216, 246], b: [210, 242], a: [255, 255] }
+      warm_bg: { type: random, r: [226, 250], g: [220, 245], b: [195, 228], a: [255, 255] }
+      cool_bg: { type: random, r: [205, 235], g: [220, 246], b: [232, 255], a: [255, 255] }
+      fiber_light: { type: random, r: [230, 255], g: [230, 255], b: [220, 250], a: [120, 220] }
+      fiber_dark: { type: random, r: [120, 180], g: [125, 180], b: [115, 170], a: [90, 170] }
+      dot_a: { type: random, r: [230, 255], g: [70, 145], b: [70, 140], a: [70, 150] }
+      dot_b: { type: random, r: [70, 150], g: [120, 210], b: [210, 255], a: [60, 140] }
+      text_dark: { type: random, r: [5, 45], g: [5, 45], b: [5, 45], a: [210, 255] }
+      text_color: { type: random, r: [20, 120], g: [20, 120], b: [20, 120], a: [180, 245] }
+      stain: { type: random, r: [40, 150], g: [35, 125], b: [25, 105], a: [25, 90] }
+      overlay_obb: { type: constant, color: "#00FF00" }
+      overlay_box: { type: constant, color: "#FF00FF" }
+      overlay_xheight: { type: constant, color: "#20A0FF" }
+      overlay_paddledet: { type: constant, color: "#8000A000" }
+
+  - name: "light-demo"
+    roles:
+      scene_bg: { type: random, r: [238, 255], g: [238, 255], b: [232, 250], a: [255, 255] }
+      warm_bg: { type: random, r: [245, 255], g: [238, 252], b: [220, 242], a: [255, 255] }
+      cool_bg: { type: random, r: [228, 245], g: [238, 255], b: [242, 255], a: [255, 255] }
+      fiber_light: { type: random, r: [250, 255], g: [250, 255], b: [245, 255], a: [130, 230] }
+      fiber_dark: { type: random, r: [150, 205], g: [150, 205], b: [145, 195], a: [70, 145] }
+      dot_a: { type: random, r: [225, 255], g: [80, 155], b: [80, 150], a: [55, 125] }
+      dot_b: { type: random, r: [75, 150], g: [130, 215], b: [215, 255], a: [50, 115] }
+      text_dark: { type: random, r: [0, 32], g: [0, 32], b: [0, 32], a: [215, 255] }
+      text_color: { type: random, r: [10, 100], g: [10, 100], b: [10, 105], a: [185, 245] }
+      stain: { type: random, r: [90, 155], g: [80, 145], b: [65, 125], a: [20, 70] }
+      overlay_obb: { type: constant, color: "#00FF00" }
+      overlay_box: { type: constant, color: "#FF00FF" }
+      overlay_xheight: { type: constant, color: "#20A0FF" }
+      overlay_paddledet: { type: constant, color: "#8000A000" }
+
+  - name: "dark-demo"
+    roles:
+      scene_bg: { type: random, r: [22, 54], g: [24, 58], b: [28, 66], a: [255, 255] }
+      warm_bg: { type: random, r: [54, 78], g: [48, 70], b: [38, 62], a: [255, 255] }
+      cool_bg: { type: random, r: [24, 52], g: [38, 68], b: [58, 92], a: [255, 255] }
+      fiber_light: { type: random, r: [115, 170], g: [125, 180], b: [125, 185], a: [70, 150] }
+      fiber_dark: { type: random, r: [0, 24], g: [0, 28], b: [0, 34], a: [90, 175] }
+      dot_a: { type: random, r: [210, 255], g: [90, 160], b: [80, 150], a: [65, 145] }
+      dot_b: { type: random, r: [80, 155], g: [155, 230], b: [220, 255], a: [60, 135] }
+      text_dark: { type: random, r: [220, 255], g: [220, 255], b: [210, 250], a: [215, 255] }
+      text_color: { type: random, r: [160, 245], g: [185, 255], b: [190, 255], a: [185, 245] }
+      stain: { type: random, r: [0, 35], g: [0, 35], b: [0, 40], a: [30, 95] }
+      overlay_obb: { type: constant, color: "#00FF00" }
+      overlay_box: { type: constant, color: "#FF00FF" }
+      overlay_xheight: { type: constant, color: "#20A0FF" }
+      overlay_paddledet: { type: constant, color: "#8000A000" }
+
+patterns:
+  # Cross fibers. This looks like a regular woven material.
+  - name: "woven-cross"
+    group: "surface"
+    pattern:
+      tileSize: "28..54"
+      globalRotation: "-6..6"
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "scene_bg" } }
+        - { type: grid-procedural, spacingX: 0.16, spacingY: 0.46, thickness: "1..3", positionJitter: 0.04, color: { type: from-scheme, role: "fiber_light" }, blendMode: Screen, alpha: "0.25..0.55" }
+        - { type: grid-procedural, spacingX: 0.45, spacingY: 0.14, thickness: "1..4", positionJitter: 0.03, color: { type: from-scheme, role: "fiber_dark" }, blendMode: Multiply, alpha: "0.16..0.38" }
+
+  # Same fiber idea, rotated near 60 degrees.
+  - name: "woven-diagonal-60"
+    group: "surface"
+    pattern:
+      tileSize: "32..62"
+      globalRotation: "54..66"
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "warm_bg" } }
+        - { type: grid-procedural, spacingX: 0.18, spacingY: 0.52, thickness: "1..3", positionJitter: 0.05, color: { type: from-scheme, role: "fiber_light" }, blendMode: Screen, alpha: "0.24..0.52" }
+        - { type: grid-procedural, spacingX: 0.52, spacingY: 0.18, thickness: "2..5", positionJitter: 0.04, color: { type: from-scheme, role: "fiber_dark" }, blendMode: Multiply, alpha: "0.14..0.34" }
+
+  # Small colored dots on a clean material.
+  - name: "soft-color-dots"
+    group: "surface"
+    pattern:
+      tileSize: "44..76"
+      globalRotation: "-2..2"
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "cool_bg" } }
+        - { type: circle-random, count: "5..14", width: "0.025..0.075", color: { type: from-scheme, role: "dot_a" }, blendMode: SrcOver, alpha: "0.25..0.65" }
+        - { type: circle-random, count: "5..14", width: "0.020..0.065", color: { type: from-scheme, role: "dot_b" }, blendMode: SrcOver, alpha: "0.20..0.55" }
+
+  # Light ruled paper with tiny grid lines.
+  - name: "technical-paper"
+    group: "surface"
+    pattern:
+      tileSize: "72..120"
+      globalRotation: "-3..3"
+      layers:
+        - { type: fill, color: { type: constant, color: "#F5F3EA" } }
+        - { type: grid-procedural, spacingX: 0.18, spacingY: 0.18, thickness: "1", color: { type: constant, color: "#A8CBE8" }, blendMode: Multiply, alpha: "0.28..0.50" }
+
+  # Regular stripes for package labels, shelves, or simple panels.
+  - name: "soft-stripes"
+    group: "surface"
+    pattern:
+      tileSize: "36..72"
+      globalRotation: "-18..18"
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "scene_bg" } }
+        - { type: rect-fixed, rect: [0, 0, 0.50, 1.0], color: { type: from-scheme, role: "fiber_light" }, blendMode: Screen, alpha: "0.18..0.40" }
+        - { type: rect-fixed, rect: [0.55, 0, 0.10, 1.0], color: { type: from-scheme, role: "fiber_dark" }, blendMode: Multiply, alpha: "0.08..0.24" }
+
+  # Dirt and print noise. This is applied after text in some variants.
+  - name: "fine-speckles"
+    group: "wear"
+    pattern:
+      tileSize: "16..42"
+      globalRotation: "-30..30"
+      layers:
+        - { type: scatter-random, count: "16..48", width: "0.025..0.080", rotation: "0..360", color: { type: from-scheme, role: "stain" }, blendMode: Multiply, alpha: "0.20..0.65" }
+
+pipelinePrograms:
+  # Entry point for scene source selection.
+  # It chooses one source variant from the scene-source group.
+  - name: "scene-demo"
+    group: "scene"
+    stages:
+      - { type: pipeline-select, group: "scene-source", mode: Single }
+
+  # Variant 1A: generate new text over a random image background.
+  # Background images are loaded from ../LocalArtifacts/Backgrounds.
+  # To remove this variant from random selection, comment out only the next group line.
+  - name: "scene-source-background-images-with-text"
+    group: "scene-source"
+    weight: 1.0
+    stages:
+      - { type: background-fill-color, color: { type: from-scheme, role: "scene_bg" } }
+      - type: image-folder
+        path: "../LocalArtifacts/Backgrounds"
+        recursive: true
+        window: { mode: FullFrame, x: "0", y: "0", width: "100%", height: "100%", count: "1", allowOutOfBounds: true, minVisibleAreaPercent: 50, allowOverlap: true }
+        alpha: "0.55..1.0"
+        blendMode: SrcOver
+        augment:
+          fitMode: Cover
+          scale: "1.0..2.2" # Random image scale.
+          rotation: "0+-180" # Random rotation around the image center.
+          flipXProbability: 0.5 # 50% chance to mirror horizontally.
+          flipYProbability: 0.5 # 50% chance to mirror vertically.
+          brightness: "0+-0.1" # Small brightness change for variety.
+          contrast: "0+-0.5" # Contrast change for stronger visual spread.
+          saturation: "0+-1" # Saturation change for color variety.
+          blur: "0..0.4" # Optional blur to soften source images.
+      - { type: pipeline-program, programName: "text-demo" }
+      - { type: pipeline-select, group: "wear", mode: OptionalSingle, noneWeight: 0.55 }
+      - { type: pipeline-select, group: "light", mode: OptionalSingle, noneWeight: 0.45 }
+
+  # Variant 1B: generate new text over a procedural background.
+  # Use this source when you want a generated material instead of an external image.
+  # To remove this variant from random selection, comment out only the next group line.
+  - name: "scene-source-procedural-with-text"
+    group: "scene-source"
+    weight: 1.0
+    stages:
+      - { type: pipeline-select, group: "scene-base", mode: Single }
+      - { type: pipeline-program, programName: "text-demo" }
+      - { type: pipeline-select, group: "wear", mode: OptionalSingle, noneWeight: 0.55 }
+      - { type: pipeline-select, group: "light", mode: OptionalSingle, noneWeight: 0.45 }
+
+  # Variant 2: full-frame image only, without generated text or extra scene effects.
+  # Images are loaded from ../LocalArtifacts/TextImage.
+  # To remove this variant from random selection, comment out only the next group line.
+  - name: "scene-source-text-image-only"
+    group: "scene-source"
+    weight: 1.0
+    stages:
+      - type: image-folder
+        path: "../LocalArtifacts/TextImage"
+        recursive: true
+        window: { mode: FullFrame, x: "0", y: "0", width: "100%", height: "100%", count: "1", allowOutOfBounds: true, minVisibleAreaPercent: 50, allowOverlap: true }
+        alpha: 1.0
+        blendMode: SrcOver
+        augment:
+          fitMode: Cover
+          scale: "0.8..1.2" # Random image scale.
+          rotation: "0+-35" # Random rotation around the image center.
+          flipXProbability: 0 # 50% chance to mirror horizontally.
+          flipYProbability: 0 # 50% chance to mirror vertically.
+          brightness: "0+-0.2" # Small brightness change for variety.
+          contrast: "0+-0.5" # Contrast change for stronger visual spread.
+          saturation: "0+-1" # Saturation change for color variety.
+          blur: "0..0.05" # Optional blur to soften source images.
+
+  # Builds a simple procedural material from one surface pattern and light noise.
+  - name: "base-material"
+    group: "scene-base"
+    weight: 1.0
+    stages:
+      - { type: background-fill-color, color: { type: from-scheme, role: "scene_bg" } }
+      - { type: tiled-pattern, group: "surface", blendMode: SrcOver, alpha: "0.86..1.0" }
+      - { type: noise-background, noiseType: Fractal, freq: "0.006..0.030", octaves: "1..4", alpha: "0.04..0.18", blendMode: Multiply }
+
+  # Builds a richer procedural material by layering two surface patterns.
+  - name: "base-layered-material"
+    group: "scene-base"
+    weight: 0.7
+    stages:
+      - { type: background-fill-color, color: { type: from-scheme, role: "warm_bg" } }
+      - { type: tiled-pattern, group: "surface", blendMode: SrcOver, alpha: "0.70..0.95" }
+      - { type: tiled-pattern, group: "surface", blendMode: SoftLight, alpha: "0.18..0.42" }
+      - { type: tiled-texture, tileSize: "10..38", alpha: "0.03..0.12", rotation: "0+-180" }
+
+  # Adds light full-frame speckles over the current scene.
+  - name: "wear-small"
+    group: "wear"
+    weight: 1.0
+    stages:
+      - { type: tiled-pattern, group: "wear", blendMode: Multiply, alpha: "0.14..0.36" }
+
+  # Adds several local worn patches with speckles and turbulence noise.
+  - name: "wear-patches"
+    group: "wear"
+    weight: 0.8
+    stages:
+      - type: pipeline-repeat
+        count: "2..6"
+        window: { mode: ScatteredRects, count: "1", width: "12%..30%", height: "10%..28%", allowOutOfBounds: true, minVisibleAreaPercent: 45, allowOverlap: true }
+        stages:
+          - { type: tiled-pattern, group: "wear", blendMode: Multiply, alpha: "0.20..0.55" }
+          - { type: noise-background, noiseType: Turbulence, freq: "0.015..0.055", octaves: "1..3", alpha: "0.05..0.16", blendMode: Multiply }
+
+  # Adds a soft spotlight and mild camera effects.
+  - name: "light-soft"
+    group: "light"
+    weight: 1.0
+    stages:
+      - { type: spotlight, radius: "35%..95%", alpha: "0.15..0.42", blendMode: SoftLight }
+      - { type: camera-effects, blur: "0.0..0.6", grainAlpha: 0.045 }
+
+  # Adds a brighter screen-like light pass and very mild camera effects.
+  - name: "light-bright"
+    group: "light"
+    weight: 0.6
+    stages:
+      - { type: spotlight, radius: "45%..110%", alpha: "0.12..0.32", blendMode: Screen }
+      - { type: camera-effects, blur: "0.0..0.35", grainAlpha: 0.030 }
+
+  # Places several text lines with different providers and font groups.
+  - name: "text-demo"
+    group: "text"
+    stages:
+      # Natural random lines.
+      - type: text-line
+        classId: 0
+        count: "3..8"
+        rotation: "0+-14"
+        color: { type: from-scheme, role: "text_dark" }
+        x: "12%..88%"
+        y: "12%..88%"
+        font: { type: system-random, includeGroups: ["practical-sans", "industrial"], excludeGroups: ["decorative"], allowedWeights: [Normal, Bold], allowedSlants: [Upright], size: "18..72" }
+        provider:
+          type: random-char
+          charSet: "latin-digits"
+          lines: "1..3"
+          words: "1..5"
+          wordLength: "2..8"
+          lineSpacing: "0..0.18"
+          alignments: [Left, Center, Right]
+          sentenceCase: true
+
+      # Common public label shapes: lot numbers, box IDs, dates, and part IDs.
+      - type: text-line
+        classId: 0
+        count: "2..6"
+        rotation: "0+-9"
+        color: { type: from-scheme, role: "text_color" }
+        x: "15%..85%"
+        y: "14%..86%"
+        font: { type: system-random, includeGroups: ["bold-signage", "practical-sans", "mono"], excludeGroups: ["decorative"], allowedWeights: [Normal, Bold], allowedSlants: [Upright], size: "24..92" }
+        provider:
+          type: pattern
+          templates: ["LOT-{NNNN}", "BOX-{LL}-{NN}", "ID {LL}{NNN}", "PART {LL}-{NNN}", "{NN}/{NN}/{NNNN}", "{S:QC|QA|OK}-{NNN}"]
+
+      # Mixed provider. It randomly chooses fixed words or generated codes.
+      - type: text-line
+        classId: 0
+        count: "1..4"
+        probability: 0.85
+        rotation: "0+-18"
+        color: { type: from-scheme, role: "text_dark" }
+        x: "18%..82%"
+        y: "18%..82%"
+        font: { type: system-random, includeGroups: ["mono", "ui-sans", "practical-sans"], excludeGroups: ["decorative"], allowedWeights: [Normal, Bold], allowedSlants: [Upright], size: "18..58" }
+        provider:
+          type: composite
+          items:
+            - { weight: 1.0, provider: { type: constant, text: "FRAGILE" } }
+            - { weight: 1.0, provider: { type: constant, text: "CHECKED" } }
+            - { weight: 1.6, provider: { type: pattern, templates: ["REF-{LL}{NN}", "SKU-{NNNN}", "ZONE {L}-{N}"] } }
+
+stages:
+  - { type: scheme-selector }
+  - { type: pipeline-program, programName: "scene-demo" }
+
+  # Save the clean generated image first.
+  - { type: write-image, path: "images", format: Jpeg, quality: 92 }
+
+  # Export labels based on the generated text geometry.
+  - { type: write-yolo-box, path: "labels_box", feedbackLayer: "debug_box" }
+  - { type: write-yolo-obb, path: "labels_obb_font", feedbackLayer: "debug_obb_font" }
+  - { type: write-yolo-obb, path: "labels_obb_xheight", feedbackLayer: "debug_xheight", boxType: XHeight }
+
+  # Optional detector pass. The model is downloaded to modelPath if it is missing.
+  - type: paddledet
+    # Available backend values from NeuroModFlowNet.ONNX.InferenceBackend:
+    # cpu, cuda, tensorrt
+    backend: cuda
+    # Available runner access modes:
+    # SharedLocked, PerThread
+    runnerAccessMode: PerThread
+    modelPath: "../models/paddleocr/detection/v5/det.onnx"
+    outputLayer: "paddledet_obb"
+    maskDataKey: "paddledet.mask"
+    polygonDataKey: "paddledet.polygons"
+    classId: 0
+    labelText: "paddledet"
+
+  # Export labels from the detector annotation layer.
+  - { type: write-yolo-obb-layer, path: "labels_obb_paddledet", annotationLayer: "paddledet_obb", feedbackLayer: "debug_paddledet" }
+
+  # Human-readable debug preview.
+  - type: write-debug-preview
+    path: "debug_preview"
+    format: Jpeg
+    quality: 90
+    panelWidth: 420
+    padding: 18
+    fontSize: 14
+    title: "Public Demo Trace"
+    traceVerbosity: Compact
+    overlayLayers:
+      - { layerName: "debug_obb_font", colorRole: "overlay_obb", strokeWidth: 2 }
+      - { layerName: "debug_box", colorRole: "overlay_box", strokeWidth: 2 }
+      - { layerName: "debug_xheight", colorRole: "overlay_xheight", strokeWidth: 2 }
+      - { layerName: "paddledet_obb", colorRole: "overlay_paddledet", strokeWidth: 1, fill: true }
+
+  # Full per-sample state dump for inspection.
+  - type: write-context-dump
+    path: "context_dump"
+    fileExtension: "txt"
+    tableBorderStyle: Rounded
+    treeGuideStyle: Line
+    includeSettingsTree: true
+    includeTextLinesTree: true
+    includeAnnotationLayersTree: true
+    includeSampleDataTree: true
+    includeTraceTree: true
+    maxCollectionItems: 256
+    maxDepth: 8
+
+  # Save separate overlay images for quick visual checks.
+  # - { type: annotation-overlay, layerName: "debug_obb_font", colorRole: "overlay_obb", strokeWidth: 2.0, fill: false, showText: false }
+  # - { type: write-image, path: "overlay_obb_font", format: Jpeg, quality: 90 }
+  # - { type: annotation-overlay, layerName: "debug_box", colorRole: "overlay_box", strokeWidth: 2.0, fill: false, showText: false }
+  # - { type: write-image, path: "overlay_box", format: Jpeg, quality: 90 }
+  # - { type: annotation-overlay, layerName: "debug_xheight", colorRole: "overlay_xheight", strokeWidth: 2.0, fill: false, showText: false }
+  # - { type: write-image, path: "overlay_xheight", format: Jpeg, quality: 90 }
+  # - { type: annotation-overlay, layerName: "paddledet_obb", colorRole: "overlay_paddledet", strokeWidth: 1.0, fill: true, showText: false }
+  # - { type: write-image, path: "overlay_paddledet", format: Jpeg, quality: 90 }

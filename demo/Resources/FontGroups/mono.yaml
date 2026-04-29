@@ -1,0 +1,10 @@
+name: "mono"
+families:
+  - "Cascadia Code"
+  - "Cascadia Mono"
+  - "Consolas"
+  - "Courier New"
+  - "Lucida Console"
+  - "Roboto Mono"
+  - "Source Code Pro"
+  - "Ubuntu Mono"

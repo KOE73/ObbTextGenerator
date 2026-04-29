@@ -1,0 +1,70 @@
+﻿# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.userprefs
+*.rsuser
+*.sln.docstates
+
+# Build
+[Bb]in/
+[Oo]bj/
+/[Dd]ebug/
+/[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Oo]ut/
+artifacts/
+
+# Logs
+*.log
+[Ll]og/
+[Ll]ogs/
+
+# Tests / benchmarks / coverage
+TestResults/
+[Tt]est[Rr]esult*/
+BenchmarkDotNet.Artifacts/
+coverage*.json
+coverage*.xml
+coverage*.info
+*.coverage
+*.coveragexml
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# Frontend
+node_modules/
+
+# Project-specific
+models/
+Models/
+*.pt
+LocalArtifacts/**
+**/LocalArtifacts/**
+*.onnx
+*.torchscript
+*.engine
+*.trt
+*.plan
+*.env
+.env
+.env.*
+!.env.example

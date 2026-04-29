@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ObbTextGenerator.BuiltInPipelineStages">
+    <Position X="5.75" Y="9.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\BuiltInPipelineStages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.CompiledPipelineProgram">
+    <Position X="12" Y="43" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQAACAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Pipeline\CompiledPipelineProgram.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Stages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.CompositePipelineStageBase" BaseTypeListCollapsed="true">
+    <Position X="15" Y="34.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAgiAAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\CompositePipelineStageBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineCompositeStageSettingsBase">
+    <Position X="8.25" Y="20.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Pipeline\PipelineCompositeStageSettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineProgramDefinition">
+    <Position X="9.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQAACAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Pipeline\PipelineProgramDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Stages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineRunner">
+    <Position X="21.25" Y="49.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAgAAAAAIAAAAAAAEAAAAAgAI=</HashCode>
+      <FileName>Pipeline\PipelineRunner.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_generationSettings" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_pipeline" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineStageRegistry">
+    <Position X="23.75" Y="49.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\PipelineStageRegistry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_factories" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.RenderStageBase" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAgiAAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\RenderStageBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ObbTextGenerator.RenderStageSettingsBase">
+    <Position X="14" Y="22.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Pipeline\RenderStageSettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.StageFactoryContext">
+    <Position X="26.5" Y="46.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAIAAAAAQAAAAAAAAAAAAAAAiAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Pipeline\StageFactoryContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.StageSettingsBase">
+    <Position X="10" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\StageSettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.AnnotationOverlayStage">
+    <Position X="19" Y="17.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAiAAAAAQAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Visualization\AnnotationOverlayStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.BackgroundFillColorStage">
+    <Position X="34.5" Y="17.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgCAgAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Background\BackgroundFillColorStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.CameraEffectsStage">
+    <Position X="27.25" Y="17.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgiAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Effects\CameraEffectsStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.ImageFolderStage">
+    <Position X="31" Y="17.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAQIBAAAgiAAAAAQAAAAAAAAABAAIAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Image\ImageFolderStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.SpotlightStage">
+    <Position X="23.5" Y="17.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgiAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Light\SpotlightStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.NoiseBackgroundStage">
+    <Position X="45.75" Y="17.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAgiAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Noise\NoiseBackgroundStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.TiledPatternStage">
+    <Position X="59.5" Y="17.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAANAAoAACIAAAAiiAAAAAQABACAEAAAIAAAAAAAABA=</HashCode>
+      <FileName>Stages\Scene\Pattern\TiledPatternStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.TiledTextureStage">
+    <Position X="43.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAiAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Texture\TiledTextureStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.TextLineStage">
+    <Position X="52.5" Y="17.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AFAAAAgAAAAAggBxiAkAIAQBQAKABAAQwEAIAABAAWA=</HashCode>
+      <FileName>Stages\Text\TextLineStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineBlockStageSettings">
+    <Position X="11.75" Y="24.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineBlockStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineProgramStageSettings">
+    <Position X="9.25" Y="27" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineProgramStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineRepeatStageSettings">
+    <Position X="15.25" Y="27" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineRepeatStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineSelectStageSettings">
+    <Position X="12.25" Y="27" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAIAIAACAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineSelectStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.AnnotationOverlayStageSettings">
+    <Position X="19" Y="24.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACEAAAAAAAAQAAACBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Visualization\AnnotationOverlayStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.BackgroundFillColorStageSettings">
+    <Position X="34.5" Y="24.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Background\BackgroundFillColorStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.CameraEffectsStageSettings">
+    <Position X="27.25" Y="24.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAEA=</HashCode>
+      <FileName>Stages\Scene\Effects\CameraEffectsStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.ImageFolderStageSettings">
+    <Position X="31" Y="24.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAIAAAAAAAAgAIAAABAAAEAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Image\ImageFolderStageSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Augment" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.SpotlightStageSettings">
+    <Position X="23.5" Y="24.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAgAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Light\SpotlightStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.NoiseBackgroundStageSettings">
+    <Position X="49.75" Y="24.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAAAAAAAAAAAAAAAAAAhAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Noise\NoiseBackgroundStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PatternStageSettings">
+    <Position X="59.5" Y="24" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAABAAAAAgAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\PatternStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.TiledTextureStageSettings">
+    <Position X="44.25" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIEAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Texture\TiledTextureStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.TextLineStageSettings">
+    <Position X="46.5" Y="25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAEAIAAAAAAAIQAAAAAABAAAAAAgAACYAA=</HashCode>
+      <FileName>Stages\Text\TextLineStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineBlockStage">
+    <Position X="15" Y="39" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgCAAAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineBlockStage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_stages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineProgramStage">
+    <Position X="9.5" Y="39" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgiIAAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineProgramStage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_settings" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_stages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineRepeatStage">
+    <Position X="17.25" Y="39" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgiAAAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineRepeatStage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_stages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineSelectStage">
+    <Position X="12" Y="39" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAIAAAIhiAAAIAQAAAEAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Stages\Pipeline\PipelineSelectStage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_settings" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_candidates" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.AnnotationOverlayStageFactory" Collapsed="true">
+    <Position X="19" Y="16" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Visualization\AnnotationOverlayStage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ObbTextGenerator.SpotlightStageFactory" Collapsed="true">
+    <Position X="23.5" Y="16" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Light\SpotlightStage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ObbTextGenerator.CameraEffectsStageFactory" Collapsed="true">
+    <Position X="27.25" Y="16" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Effects\CameraEffectsStage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ObbTextGenerator.CircleRandomLayerSettings" Collapsed="true">
+    <Position X="60.5" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\CircleRandomLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.FillLayerSettings" Collapsed="true">
+    <Position X="65" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\FillLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.GridProceduralLayerSettings" Collapsed="true">
+    <Position X="60.5" Y="31.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAABAIgAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\GridProceduralLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.LineRandomLayerSettings" Collapsed="true">
+    <Position X="65" Y="31.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\LineRandomLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.NamedPatternSettings" Collapsed="true">
+    <Position X="64.25" Y="29.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\NamedPatternSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PatternLayerSettingsBase" Collapsed="true">
+    <Position X="59.25" Y="30.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\PatternLayerSettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PerlinProceduralLayerSettings" Collapsed="true">
+    <Position X="62.75" Y="31.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\PerlinProceduralLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.RectFixedLayerSettings" Collapsed="true">
+    <Position X="67.25" Y="31.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\RectFixedLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.RectRandomLayerSettings" Collapsed="true">
+    <Position X="62.75" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAIAAAAAAAEQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\RectRandomLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.ScatterRandomLayerSettings" Collapsed="true">
+    <Position X="67.25" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAEQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\ScatterRandomLayerSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PatternLayerInstance" Collapsed="true">
+    <Position X="61.75" Y="29.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\TiledPatternStage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.TiledPatternStageFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="59.5" Y="14.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\TiledPatternStage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ObbTextGenerator.TiledPatternStageSettings" Collapsed="true">
+    <Position X="61.75" Y="30.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAEAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Pattern\TiledPatternStageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.ImageFolderAugmentationSettings">
+    <Position X="30.25" Y="27.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAIAABAIAAEAAAAAAAAAAAAAAAggAAMA=</HashCode>
+      <FileName>Stages\Scene\Image\ImageFolderAugmentationSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FitMode" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.ImageFolderStageFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="16" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Image\ImageFolderStageFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ObbTextGenerator.BackgroundFillColorStageFactory" Collapsed="true">
+    <Position X="34.5" Y="16" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stages\Scene\Background\BackgroundFillColorStageFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineStageModuleLoader" Collapsed="true">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAEAAAAAAAAAAAAAAgAAAEABAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\PipelineStageModuleLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.PipelineStageRegistrationCollection" Collapsed="true">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAACAAAAAACAAAAAAAAAhAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\PipelineStageRegistrationCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.GenerationSettings">
+    <Position X="21.25" Y="52.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAARAAAQAAAAAAAAEAAAAAAAAAIAAIAAAAAAAA=</HashCode>
+      <FileName>Configuration\GenerationSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.RenderSession">
+    <Position X="44.5" Y="36.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACBAABABAAAAEAAAAAQAgAAAEYAEABQACAAAA=</HashCode>
+      <FileName>Rendering\RenderSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.RenderContext">
+    <Position X="48.75" Y="36.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAgAAEABBAAAE1BQAA4AAENAAIAAAAEEgIIBQAAQCBA=</HashCode>
+      <FileName>Rendering\RenderContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Session" />
+      <Property Name="Settings" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_renderWindows" />
+      <Property Name="AnnotationLayers" />
+      <Property Name="TraceEntries" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.RenderWindow">
+    <Position X="52.25" Y="36.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAQAEAACAAIAAAACAGAAAAIAgA=</HashCode>
+      <FileName>Rendering\RenderWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.AnnotationLayer">
+    <Position X="52.25" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\Annotations\ShapeAnnotation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Annotations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ObbTextGenerator.ShapeAnnotation">
+    <Position X="55.25" Y="42" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAgAAAAAAAAAAAAAAAAAAAAAAACAAEAAA=</HashCode>
+      <FileName>Rendering\Annotations\ShapeAnnotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.RenderSettings">
+    <Position X="48.75" Y="34" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAIAAAAAEAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\RenderSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObbTextGenerator.RenderTraceEntry">
+    <Position X="55.5" Y="39.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAABAAAIAAAAAAAAAAQAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Rendering\RenderTraceEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ObbTextGenerator.IPipelineStage">
+    <Position X="9.25" Y="45.25" Width="10.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\IPipelineStage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ObbTextGenerator.IPipelineStageFactory">
+    <Position X="27.75" Y="49.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\IPipelineStageFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ObbTextGenerator.IPipelineStageModule" Collapsed="true">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\IPipelineStageModule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ObbTextGenerator.PipelineSelectionMode">
+    <Position X="30.75" Y="46.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQCAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pipeline\PipelineSelectionMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ObbTextGenerator.ImageFitMode">
+    <Position X="31" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAQACAAAAA=</HashCode>
+      <FileName>Stages\Scene\Image\ImageFitMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

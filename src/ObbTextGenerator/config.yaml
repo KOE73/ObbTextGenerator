@@ -1,0 +1,295 @@
+# Active test config: full-frame background built through recursive pipeline programs.
+
+general:
+  width: 1024
+  height: 1024
+  sampleCount: 100
+  outputRoot: "C:/GeneratorOutput"
+  trainSplit: 0.8
+
+patterns:
+  - &pattern_common { tileSize: "10..50", globalRotation: "-45..45" }
+
+  # Светлая мешковина: два fill-слоя и две тёмные полупрозрачные половины, выглядит как простая тканевая сетка без сильного объёма.
+  - name: "industrial-sack"
+    group: "base"
+    pattern:
+      <<: *pattern_common
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "industrial_sack_fill" } }
+        - { type: fill, color: { type: from-scheme, role: "industrial_sack_light_fill" } }
+        - { type: rect-fixed, rect: [0, 0, 1.0, 0.5], color: { type: from-scheme, role: "sack_shadow" }, blendMode: SrcOver, alpha: "0.01..0.1" }
+        - { type: rect-fixed, rect: [0, 0, 0.5, 1.0], color: { type: from-scheme, role: "sack_shadow" }, blendMode: SrcOver, alpha: "0.01..0.15" }
+
+  # Более рельефная сетка: базовый fill плюс тёмная вертикаль через Multiply и светлая горизонталь через Overlay, выглядит объёмнее и жёстче.
+  - name: "mesh-sack"
+    group: "base"
+    pattern:
+      <<: *pattern_common
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "mesh_sack_fill" } }
+        - { type: rect-fixed, rect: [0, 0, 0.5, 1.0], color: { type: from-scheme, role: "sack_shadow" }, blendMode: Multiply, alpha: "0.05..0.15" }
+        - { type: rect-fixed, rect: [0, 0, 1.0, 0.5], color: { type: from-scheme, role: "sack_highlight" }, blendMode: Overlay, alpha: "0.05..0.15" }
+
+  # Мягкая тканевая подложка: базовый fill, сверху тень через Multiply и сбоку высветление через Overlay, выглядит как спокойное переплетение.
+  - name: "woven-sack"
+    group: "base"
+    pattern:
+      <<: *pattern_common
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "woven_sack_fill" } }
+        - { type: rect-fixed, rect: [0, 0, 1.0, 0.5], color: { type: from-scheme, role: "sack_shadow" }, blendMode: Multiply, alpha: "0.05..0.1" }
+        - { type: rect-fixed, rect: [0, 0, 0.5, 1.0], color: { type: from-scheme, role: "sack_highlight" }, blendMode: Overlay, alpha: "0.05..0.1" }
+
+  # Горошек: одна подложка и один набор кругов, а сами цвета случайно гуляют внутри scheme-палитры.
+  - name: "polka-dots"
+    group: "base"
+    pattern:
+      <<: *pattern_common
+      layers:
+        - { type: fill, color: { type: from-scheme, role: "polka_base_fill" } }
+        - { type: circle-random, count: "10..18", width: "0.12..0.24", color: { type: from-scheme, role: "polka_dots" }, alpha: "0.85..1.0" }
+
+  # Мелкая грязевая пыль: scatter-random из серых точек, нужен для лёгкого шумового загрязнения поверх горошка или ткани.
+  - name: "dot-speckles"
+    group: "contamination"
+    pattern:
+      <<: *pattern_common
+      layers:
+        - { type: scatter-random, count: "12..30", width: "0.02..0.05", rotation: "0..360", color: { type: from-scheme, role: "dot_speckles" }, alpha: "0.08..0.2", blendMode: Multiply }
+
+
+  # Более выраженные грязевые крапины: scatter-random с тёмными цветными пятнами, нужен для пыли, грязи и неравномерного загрязнения.
+  - name: "dirty-speckles"
+    group: "contamination"
+    pattern:
+      <<: *pattern_common
+      layers:
+        - { type: scatter-random, count: "20..70", width: "0.03..0.08", rotation: "0..360", color: { type: from-scheme, role: "dirty_speckles" }, blendMode: Multiply }
+
+schemes:
+  - name: "paper-dark-text"
+    roles:
+      bg: { type: random, r: [240, 255], g: [240, 255], b: [230, 245], a: [255, 255] } # Очень светлая почти белая бумага, слегка в тёпло-желтоватую сторону.
+      text: { type: random, r: [0, 50], g: [0, 50], b: [0, 50], a: [255, 255] } # Почти чёрный нейтральный текст, иногда чуть сероватый.
+      industrial_sack_fill: { type: random, r: [214, 228], g: [198, 212], b: [172, 188], a: [255, 255] } # Тёплая светлая мешковина, бежево-песочная.
+      industrial_sack_light_fill: { type: random, r: [236, 248], g: [236, 248], b: [228, 240], a: [255, 255] } # Почти белое высветление для мешковины.
+      mesh_sack_fill: { type: random, r: [206, 220], g: [188, 204], b: [160, 178], a: [255, 255] } # Светлая песочно-льняная база для грубой сетки.
+      woven_sack_fill: { type: random, r: [212, 226], g: [194, 208], b: [168, 184], a: [255, 255] } # Светлая тканевая база, мягче и ровнее.
+      sack_shadow: { type: constant, color: "#202020" } # Почти чёрная тень для ткани и рельефа.
+      sack_highlight: { type: constant, color: "#FFF8EC" } # Тёплое почти белое высветление.
+      polka_base_fill: { type: random, r: [232, 246], g: [232, 244], b: [228, 240], a: [255, 255] } # Светлая подложка под горошек, от тёпло-бежевой до холодно-светлой.
+      polka_dots: { type: random, r: [62, 190], g: [68, 150], b: [72, 194], a: [255, 255] } # Случайный насыщенный цвет горошка, но не слишком светлый для тёмного текста.
+      dot_speckles: { type: gray, intensity: [100, 135] } # Небольшие тёмно-серые пылинки.
+      dirty_speckles: { type: random, r: [78, 118], g: [62, 96], b: [48, 80], a: [28, 68] } # Тёпло-серо-коричневая грязевая пыль.
+      sample_mark_text: { type: constant, color: "#C94B4B" } # Красноватая служебная маркировка, заметная на светлых сценах.
+      overlay_obb: { type: constant, color: "#FF2020" } # Яркий тёплый красный debug-контур.
+      overlay_box: { type: constant, color: "#20FF40" } # Яркий салатово-зелёный debug-бокс.
+      overlay_xheight: { type: constant, color: "#20A0FF" } # Яркий холодный голубовато-синий debug-слой.
+
+  - name: "industrial-dark"
+    roles:
+      bg: { type: random, r: [20, 40], g: [20, 40], b: [20, 40], a: [255, 255] } # Очень тёмный графитовый или почти угольный фон без явного цветного оттенка.
+      text: { type: random, r: [200, 255], g: [200, 255], b: [200, 255], a: [255, 255] } # Очень светлый серо-белый текст для сильного контраста на тёмном фоне.
+      industrial_sack_fill: { type: random, r: [52, 68], g: [48, 64], b: [40, 56], a: [255, 255] } # Тёмная мешковина, графитово-коричневая.
+      industrial_sack_light_fill: { type: random, r: [78, 98], g: [74, 94], b: [66, 88], a: [255, 255] } # Светлее базы, но всё ещё тёмный тканевый слой.
+      mesh_sack_fill: { type: random, r: [58, 74], g: [54, 70], b: [46, 62], a: [255, 255] } # Тёмная грубая сетка.
+      woven_sack_fill: { type: random, r: [62, 78], g: [58, 74], b: [50, 66], a: [255, 255] } # Тёмная, но более мягкая тканевая база.
+      sack_shadow: { type: constant, color: "#000000" } # Чистая чёрная тень для рельефа.
+      sack_highlight: { type: constant, color: "#D8D8D8" } # Светло-серое высветление для тёмных тканей.
+      polka_base_fill: { type: random, r: [44, 74], g: [42, 70], b: [40, 68], a: [255, 255] } # Тёмная подложка под горошек, от графитовой до тёмно-оливковой.
+      polka_dots: { type: random, r: [138, 220], g: [126, 214], b: [132, 226], a: [255, 255] } # Случайный светлый цвет горошка для контраста на тёмной базе.
+      dot_speckles: { type: gray, intensity: [135, 175] } # Светло-серые пылинки на тёмной базе.
+      dirty_speckles: { type: random, r: [130, 170], g: [118, 156], b: [100, 138], a: [28, 74] } # Светлая грязевая пыль, заметная на тёмном фоне.
+      sample_mark_text: { type: constant, color: "#FF8A8A" } # Светлая красноватая маркировка для тёмных сцен.
+      overlay_obb: { type: constant, color: "#FF2020" } # Яркий тёплый красный debug-контур.
+      overlay_box: { type: constant, color: "#20FF40" } # Яркий салатово-зелёный debug-бокс.
+      overlay_xheight: { type: constant, color: "#20A0FF" } # Яркий холодный голубовато-синий debug-слой.
+
+  - name: "industrial-light"
+    roles:
+      bg: { type: random, r: [220, 255], g: [220, 255], b: [220, 255], a: [255, 255] } # Светлый холодновато-нейтральный фон, от белого до светло-серого.
+      text: { type: random, r: [0, 40], g: [0, 40], b: [0, 40], a: [255, 255] } # Очень тёмный почти чёрный текст с нейтральным оттенком.
+      industrial_sack_fill: { type: random, r: [188, 206], g: [176, 194], b: [152, 170], a: [255, 255] } # Светло-серая с тёплым оттенком мешковина.
+      industrial_sack_light_fill: { type: random, r: [228, 240], g: [228, 240], b: [224, 236], a: [255, 255] } # Очень светлое почти белое тканевое высветление.
+      mesh_sack_fill: { type: random, r: [178, 196], g: [166, 184], b: [144, 162], a: [255, 255] } # Светлая, но чуть более плотная сетка.
+      woven_sack_fill: { type: random, r: [190, 208], g: [178, 196], b: [156, 174], a: [255, 255] } # Спокойная светлая тканевая база.
+      sack_shadow: { type: constant, color: "#181818" } # Почти чёрная тень для светлых фактур.
+      sack_highlight: { type: constant, color: "#FFFDF8" } # Очень светлое тёплое высветление.
+      polka_base_fill: { type: random, r: [230, 244], g: [230, 244], b: [228, 240], a: [255, 255] } # Светлая подложка под горошек, от нейтрально-светлой до слегка цветной.
+      polka_dots: { type: random, r: [72, 186], g: [78, 154], b: [76, 196], a: [255, 255] } # Случайный средне-тёмный цвет горошка, заметный, но не кислотный.
+      dot_speckles: { type: gray, intensity: [90, 125] } # Тёмно-серые точки на светлой базе.
+      dirty_speckles: { type: random, r: [72, 110], g: [58, 92], b: [42, 76], a: [26, 66] } # Более тёмные коричнево-серые загрязнения.
+      sample_mark_text: { type: constant, color: "#D25656" } # Красноватая маркировка на светлых сценах.
+      overlay_obb: { type: constant, color: "#FF2020" } # Яркий тёплый красный debug-контур.
+      overlay_box: { type: constant, color: "#20FF40" } # Яркий салатово-зелёный debug-бокс.
+      overlay_xheight: { type: constant, color: "#20A0FF" } # Яркий холодный голубовато-синий debug-слой.
+
+pipelinePrograms:
+  # Корневая подпрограмма сцены: последовательно выбирает базу, грязь и свет, чтобы собрать один full-frame фон из семейств вариантов.
+  - name: "scene-full"
+    group: "scene"
+    stages:
+      #- { type: pipeline-program, programName: "full-base" }
+      - { type: pipeline-select, group: "full-base" }
+      - { type: pipeline-select, group: "full-dirt", mode: OptionalSingle, noneWeight: 0.8 }
+      - { type: pipeline-select, group: "full-light", mode: OptionalSingle, noneWeight: 1.2 }
+      - { type: pipeline-select, group: "full-patch", mode: OptionalSingle, noneWeight: 2.0 }
+
+  # Лоскуты и разных паттернов
+  - name: "scenet-paches"
+    group: "full-base"
+    stages:
+      - { type: background-fill-color, color: { type: from-scheme, role: "bg" } }
+      - type: pipeline-repeat
+        count: "4..8"
+        window: { mode: ScatteredRects, count: "4..8", width: "18%..60%", height: "18%..60%", allowOverlap: true }
+        stages:
+          #- { type: pipeline-select, group: "patch-base", mode: Single }
+          - { type: tiled-pattern, group: "base" }
+          - { type: pipeline-select, group: "full-dirt", mode: OptionalSingle, noneWeight: 0.7 }
+      #- { type: pipeline-select, group: "full-light", mode: OptionalSingle, noneWeight: 1.0 }
+  
+
+  # База сцены: один tiled-pattern, который случайно выбирает любой паттерн группы base, этого достаточно для смены основной фактуры.
+  - name: "full-base"
+    group: "full-base"
+    stages:
+      - { type: tiled-pattern, group: "base" }
+
+  # База сцены из реальных изображений: случайная картинка из папки wallpaper-ов с cover-подгонкой и лёгкой аугментацией.
+  - name: "full-base-wallpapers"
+    group: "full-base"
+    stages:
+      - type: image-folder
+        path: "C:/NN/WallPapers/wallpapers"
+        recursive: true
+        augment:
+          fitMode: Cover
+          scale: "1.0..1.2"
+          rotation: "0+-8"
+          flipXProbability: 0.5
+          flipYProbability: 0.0
+          #brightnessJitter: 0.08
+          #contrastJitter: 0.1
+          #saturationJitter: 0.08
+          #blur: "0..0.6"
+
+  # Вариант загрязнения: накладывает один из contamination-паттернов через Multiply, выглядит как пыль, крапины и локальная грязь.
+  - name: "full-dirt-speckles"
+    group: "full-dirt"
+    weight: 1.0
+    stages:
+      - { type: tiled-pattern, group: "contamination", blendMode: Multiply, alpha: "0.15..0.45" }
+
+  # Вариант загрязнения: добавляет турбулентный noise-background, выглядит как мягкая неравномерная пыль или дымка.
+  - name: "full-dirt-noise"
+    group: "full-dirt"
+    weight: 0.8
+    stages:
+      - { type: noise-background, noiseType: Turbulence, freq: "0.008..0.025", octaves: "1..3", alpha: "0.06..0.18", blendMode: Multiply }
+
+  # Вариант света и постобработки: spotlight плюс лёгкий camera-effects, даёт мягкий объём, виньетирование и немного grain/blur.
+  - name: "full-light-soft"
+    group: "full-light"
+    weight: 1.0
+    stages:
+      - type: pipeline-block
+        stages:
+          - { type: spotlight, radius: "35%..90%", alpha: "0.18..0.42", blendMode: SoftLight }
+          - { type: camera-effects, blur: "0.0..0.7", grainAlpha: 0.05 }
+
+  # Содержимое маленькой бирки: локальный светлый прямоугольник и одна короткая надпись внутри него.
+  - name: "patch-label-content"
+    group: "patch-content"
+    stages:
+      - { type: background-fill-color, color: { type: from-scheme, role: "industrial_sack_light_fill" } }
+      - type: text-line
+        classId: 0
+        count: "1"
+        rotation: "0+-6"
+        color: { type: from-scheme, role: "text" }
+        font: { type: system-random, includeGroups: ["practical-sans", "practical-serif"], excludeGroups: ["decorative"], requiredGlyph: "Я", allowedWeights: [Normal, Bold], allowedSlants: [Upright], allowedWidths: [Normal], size: "22..40" }
+        provider:
+          type: pattern
+          templates: ["LOT {N}{N}", "AB-{NN}", "{S:MS|LX}-{N}", "SN {N}{N}{N}"]
+
+  # Небольшая бирка-квадратик: patch-content рисуется на отдельной поверхности и затем вставляется в сцену как единый фрагмент.
+  - name: "full-patch-label"
+    group: "full-patch"
+    weight: 1.0
+    stages:
+      - type: pipeline-program
+        programName: "patch-label-content"
+        renderMode: Surface
+        surface:
+          minCreatedTextObjects: 1
+          maxAttempts: 6
+        place:
+          mode: ScatteredRects
+          count: "1..2"
+          width: "16%..26%"
+          height: "10%..16%"
+          allowOverlap: false
+          rotation: "0+-12"
+          blendMode: SrcOver
+          opacity: 1.0
+
+stages:
+  - { type: scheme-selector }
+  - { type: pipeline-program, programName: "scene-full" }
+
+  - type: text-line
+    classId: 0
+    count: "0..3"
+    color: { type: from-scheme, role: "text" }
+    font: { type: system-random, includeGroups: ["practical-sans", "practical-serif"], excludeGroups: ["decorative"], requiredGlyph: "Я", allowedWeights: [Normal, Bold], allowedSlants: [Upright], allowedWidths: [Normal], size: "40..80" }
+    provider:
+      type: pattern
+      templates:
+        - "{S:1|2|3|4|5|6|7|8|9}-{S:1|2|3|4|5|6|7|8|9}{N} 35KG"
+        - "MS{S:1|2|3|4|5|6|7|8|9}-{S:1|2|3|4|5|6|7|8|9}{N} 35KG"
+        - "{S:1|2|3|4|5|6|7|8|9}X-{S:1|2|3|4|5|6|7|8|9}{N} 35KG"
+        - "{S:MS|LX}-{S:1|2|3|4|5|6|7|8|9} 35KG"
+
+  - type: text-line
+    classId: 0
+    count: "3..8"
+    color: { type: from-scheme, role: "text" }
+    font: { type: system-random, includeGroups: ["practical-sans", "practical-serif"], excludeGroups: ["decorative"], requiredGlyph: "Я", allowedWeights: [Normal, Bold], allowedSlants: [Upright], allowedWidths: [Normal], size: "40..80" }
+    provider: { type: random-char, charset: "cyrillic" }
+
+  - type: text-line
+    classId: 0
+    count: "3..9"
+    rotation: "0+-15"
+    color: { type: from-scheme, role: "text" }
+    font: { type: system-random, includeGroups: ["practical-sans", "practical-serif"], excludeGroups: ["decorative"], requiredGlyph: "Я", allowedWeights: [Normal, Bold], allowedSlants: [Upright], allowedWidths: [Normal], size: "40..80" }
+    provider:
+      type: pattern
+      templates: ["{N}-{NN} 35KG", "X{N}-{NN} 35KG", "{S:MS|LX}-{N} 35KG"]
+
+  # - type: text-line
+  #   classId: 2
+  #   count: "1"
+  #   color: { type: from-scheme, role: "sample_mark_text" }
+  #   font: { type: constant, family: "Courier New", size: 80 }
+  #   provider: { type: constant, text: "SN: 2024-ABCD" }
+
+  - { type: write-image, path: "images" }
+  - { type: write-yolo-box, path: "labels_box", feedbackLayer: "debug_box" }
+  - { type: write-yolo-obb, path: "labels_obb", feedbackLayer: "debug_obb" }
+  - { type: write-yolo-obb, path: "labels_obb_xheight", feedbackLayer: "debug_xheight", boxType: XHeight }
+  - type: write-debug-preview
+    path: "debug_preview"
+    format: jpg
+    quality: 90
+    panelWidth: 420
+    padding: 18
+    fontSize: 22
+    title: "Render Trace"
+    traceVerbosity: Compact
+    overlayLayers:
+      - { layerName: "debug_obb", colorRole: "overlay_obb", strokeWidth: 2 }
+      - { layerName: "debug_box", colorRole: "overlay_box", strokeWidth: 3 }
+      - { layerName: "debug_xheight", colorRole: "overlay_xheight", strokeWidth: 4 }

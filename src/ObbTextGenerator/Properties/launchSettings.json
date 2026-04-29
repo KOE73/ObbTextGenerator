@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "ObbTextGenerator": {
+      "commandName": "Project",
+      "workingDirectory": "."
+    },
+    "BagConfig": {
+      "commandName": "Project",
+      "workingDirectory": ".",
+      "commandLineArgs": "--config-file config_bag.yaml"
+    },
+    "FontGroupsPreviewAll": {
+      "commandName": "Project",
+      "workingDirectory": ".",
+      "commandLineArgs": "--config-file config.yaml --font-groups --font-preview-variants all --font-groups-output LocalArtifacts/FontGroupPreview_all --font-groups-text \"ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 Example Пример Яя\""
+    }
+  }
+}

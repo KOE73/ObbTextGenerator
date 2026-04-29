@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/demo/">
+    <File Path="demo/config_text.yaml" />
+    <File Path="demo/GenWithText.cmd" />
+    <File Path="demo/LoadImageBg.cmd" />
+    <File Path="demo/LoadImageText.cmd" />
+    <File Path="demo/README_DemoRun.md" />
+  </Folder>
+  <Folder Name="/Элементы решения/">
+    <File Path=".gitignore" />
+    <File Path="AGENTS.md" />
+    <File Path="LICENSE" />
+    <File Path="NOTICE" />
+    <File Path="README.md" />
+    <File Path="README_RU.md" />
+  </Folder>
+  <Project Path="src/ObbTextGenerator/ObbTextGenerator.csproj" />
+  <Project Path="src/ObbTextGenerator.PaddleDet/ObbTextGenerator.PaddleDet.csproj" />
+  <Project Path="tools/ObbTextGenerator.Tools.BackgroundDownloader/ObbTextGenerator.Tools.BackgroundDownloader.csproj" />
+</Solution>

@@ -1,0 +1,215 @@
+# ObbTextGenerator Reference Configuration
+
+general:
+  width: 1024
+  height: 1024
+  sampleCount: 20
+  outputRoot: "C:/GeneratorOutput"
+  # Shared YAML resources. Relative paths are resolved from this config file.
+  # Font groups are read from resourceRoot/FontGroups.
+  resourceRoot: "Resources"
+  trainSplit: 0.8
+  maxParallelism: 0
+
+schemes:
+  - name: "paper-dark-text"
+    roles:
+      bg: { type: random, r: [235, 255], g: [235, 255], b: [225, 245], a: [255, 255] }
+      text: { type: random, r: [0, 40], g: [0, 40], b: [0, 40], a: [255, 255] }
+      overlay_obb: { type: constant, color: "#00FF00" }
+      overlay_box: { type: constant, color: "#FF00FF" }
+
+patterns:
+  - name: "grid-paper"
+    group: "paper"
+    pattern:
+      tileSize: "100"
+      globalRotation: "-2..2"
+      layers:
+        - { type: fill, color: { type: constant, color: "#F6F3EA" } }
+        - { type: grid-procedural, spacingX: 0.2, spacingY: 0.2, thickness: "1", color: { type: constant, color: "#99CCFF" } }
+
+  - name: "industrial-sack"
+    group: "fabric"
+    pattern:
+      tileSize: "30..50"
+      globalRotation: "-45..45"
+      layers:
+        - { type: fill, color: { type: random, r: [200, 220], g: [180, 200], b: [150, 180], a: [255, 255] } }
+        - { type: rect-fixed, rect: [0, 0, 1.0, 0.5], color: { type: constant, color: "#FFFFFF" }, blendMode: Overlay, alpha: "0.1..0.3" }
+        - { type: rect-fixed, rect: [0, 0, 0.5, 1.0], color: { type: constant, color: "#000000" }, blendMode: Multiply, alpha: "0.05..0.15" }
+
+  - name: "dirty-speckles"
+    group: "contamination"
+    pattern:
+      tileSize: "40..90"
+      globalRotation: "-10..10"
+      layers:
+        - { type: scatter-random, count: "20..50", width: "0.03..0.08", rotation: "0..360", color: { type: random, r: [80, 140], g: [60, 120], b: [40, 90], a: [30, 90] }, blendMode: Multiply }
+
+# Library of reusable nested pipelines.
+# Each program can be referenced directly with `pipeline-program`
+# or selected by group with `pipeline-select`.
+pipelinePrograms:
+  - name: "base-solid"
+    group: "base"
+    weight: 1.0
+    stages:
+      - type: background-fill-color
+        color: { type: from-scheme, role: "bg" }
+
+  - name: "base-image"
+    group: "base"
+    weight: 1.0
+    stages:
+      - type: image-folder
+        path: "Resources/Backgrounds/Base"
+        recursive: true
+        augment:
+          fitMode: Cover
+          scale: "1..1.15"
+          rotation: "0+-3"
+          flipXProbability: 0.5
+          brightness: "0+-0.06"
+          contrast: "0+-0.08"
+          saturation: "0+-0.04"
+          blur: "0..1.0"
+
+  - name: "material-paper"
+    group: "material"
+    weight: 1.0
+    stages:
+      - { type: tiled-pattern, group: "paper", blendMode: Multiply, alpha: "0.2..0.5" }
+
+  - name: "material-fabric"
+    group: "material"
+    weight: 1.0
+    stages:
+      - { type: tiled-pattern, group: "fabric", blendMode: SrcOver, alpha: "0.35..0.65" }
+      - { type: tiled-texture, tileSize: "12..42", alpha: "0.03..0.14", rotation: "0+-180" }
+
+  - name: "contamination-patches"
+    group: "contamination"
+    weight: 1.0
+    stages:
+      - type: pipeline-repeat
+        count: "2..5"
+        window: { mode: ScatteredRects, count: "1", width: "12%..28%", height: "12%..28%", allowOutOfBounds: true, minVisibleAreaPercent: 50, allowOverlap: true }
+        stages:
+          - { type: tiled-pattern, group: "contamination", blendMode: Multiply, alpha: "0.25..0.6" }
+          - { type: noise-background, noiseType: Turbulence, freq: "0.01..0.05", octaves: "1..3", alpha: "0.08..0.2", blendMode: Multiply }
+
+  - name: "light-spot"
+    group: "light"
+    weight: 1.0
+    stages:
+      - { type: spotlight, radius: "30%..90%", alpha: "0.25..0.55", blendMode: Screen }
+
+  - name: "light-soft-camera"
+    group: "light"
+    weight: 1.0
+    stages:
+      - type: pipeline-block
+        stages:
+          - { type: spotlight, radius: "40%..100%", alpha: "0.18..0.4", blendMode: SoftLight }
+          - { type: camera-effects, blur: "0..0.8", grainAlpha: 0.06 }
+
+stages:
+  - { type: scheme-selector }
+
+  # Scene families: keep top-level pipeline linear,
+  # but choose one or more nested programs for each family.
+  - { type: pipeline-select, group: "base", mode: Single }
+  - { type: pipeline-select, group: "material", mode: Single }
+  - { type: pipeline-select, group: "contamination", mode: OptionalSingle, noneWeight: 1.0 }
+  - { type: pipeline-select, group: "light", mode: OptionalSingle, noneWeight: 1.0 }
+
+  # Exact program include is useful for debugging a single variant:
+  # - { type: pipeline-program, programName: "base-image" }
+
+  # Any render stage can limit itself to a window.
+  # Example:
+  # - type: tiled-pattern
+  #   group: "contamination"
+  #   window: { mode: SingleRect, positionMode: Center, x: "50%", y: "50%", width: "25%", height: "30%", allowOutOfBounds: true, minVisibleAreaPercent: 50 }
+
+  - type: text-line
+    classId: 0
+    count: "3..9"
+    rotation: "0+-15"
+    color: { type: from-scheme, role: "text" }
+    font: { type: system-random, includeGroups: ["practical-sans", "practical-serif"], excludeGroups: ["decorative"], requiredGlyph: "Я", allowedWeights: [Normal, Bold], allowedSlants: [Upright], allowedWidths: [Normal], size: "40..80" }
+    provider:
+      type: random-char
+      charSet: "latin"
+      lines: "1..3"
+      words: "1..6"
+      wordLength: "2..8"
+      lineSpacing: "0..0.2"
+      alignments: [Left, Center, Right, Justify]
+      sentenceCase: true
+
+  - { type: write-image, path: "images" }
+
+  - type: write-yolo-obb
+    path: "labels_obb"
+    annotationLayer: "paddle_test_obb"
+    boxType: FontMetrics
+    feedbackLayer: "obb_debug"
+
+  # PaddleDet requires a module entry in app.config.
+  # write-yolo-obb-layer is a built-in writer and exports runtime annotation layers.
+  - type: paddledet
+    # Available backend values from NeuroModFlowNet.ONNX.InferenceBackend:
+    # cpu, cuda, tensorrt
+    backend: cuda
+    # Available runner access modes:
+    # SharedLocked, PerThread
+    runnerAccessMode: SharedLocked
+    modelPath: "../../models/paddleocr/detection/v5/det.onnx"
+    outputLayer: "paddle_test_obb"
+    maskDataKey: "paddledet.mask"
+    polygonDataKey: "paddledet.polygons"
+    classId: 0
+
+  - type: write-yolo-obb-layer
+    path: "labels_obb_plugin"
+    annotationLayer: "paddle_test_obb"
+    feedbackLayer: "paddle_debug"
+
+  - type: write-debug-preview
+    path: "debug_preview"
+    format: Jpeg
+    quality: 90
+    panelWidth: 420
+    padding: 18
+    fontSize: 16
+    title: "Render Trace"
+    traceIndentText: "  "
+    traceVerbosity: Compact
+    overlayLayers:
+      - { layerName: "obb_debug", colorRole: "overlay_obb", strokeWidth: 2.0 }
+
+  - type: write-context-dump
+    path: "context_dump"
+    fileExtension: "txt"
+    tableBorderStyle: Ascii
+    treeGuideStyle: Ascii
+    includeSettingsTree: true
+    includeTextLinesTree: true
+    includeAnnotationLayersTree: true
+    includeSampleDataTree: true
+    includeTraceTree: true
+    maxCollectionItems: 256
+    maxDepth: 8
+
+  - { type: annotation-overlay, layerName: "obb_debug", colorRole: "overlay_obb", strokeWidth: 2.0, fill: false, showText: false }
+  - { type: write-image, path: "overlay_obb", format: Jpeg, quality: 90 }
+
+  - type: write-yolo-box
+    path: "labels_box"
+    boxType: FontMetrics
+    feedbackLayer: "box_debug"
+
+  - { type: annotation-overlay, layerName: "box_debug", colorRole: "overlay_box", strokeWidth: 2.0, fill: false, showText: false }
+  - { type: write-image, path: "overlay_box", format: Jpeg, quality: 90 }
