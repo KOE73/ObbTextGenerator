@@ -1,0 +1,691 @@
+OBB TEXT GENERATOR CONTEXT DUMP
+FormatVersion: 1
+Purpose: Human-readable snapshot of the current RenderContext state.
+================================================================================
+
+SampleIndex: 16001
+SetName: val
+CanvasSize: 640 x 640
+TextLineCount: 0
+AnnotationLayerCount: 5
+SampleDataCount: 2
+TraceEntryCount: 14
+
+          Context Summary           
+╭───────────────────┬──────────────╮
+│ Key               │ Value        │
+├───────────────────┼──────────────┤
+│ SampleIndex       │ 16001        │
+│ SetName           │ val          │
+│ Width             │ 640          │
+│ Height            │ 640          │
+│ HasParentContext  │ False        │
+│ ActivePatternName │              │
+│ ActiveScheme      │ neutral-demo │
+│ TextLines         │ 0            │
+│ AnnotationLayers  │ 5            │
+│ SampleDataItems   │ 2            │
+│ TraceEntries      │ 14           │
+╰───────────────────┴──────────────╯
+
+
+                            TextLines                            
+╭─────────┬─────────┬──────┬────────┬──────────┬─────────┬──────╮
+│ #       │ ClassId │ Text │ Origin │ Rotation │ BlockId │ Line │
+├─────────┼─────────┼──────┼────────┼──────────┼─────────┼──────┤
+│ <empty> │         │      │        │          │         │      │
+╰─────────┴─────────┴──────┴────────┴──────────┴─────────┴──────╯
+
+
+                         Annotation Layers                          
+╭─────────────────┬─────────────┬──────────────────────────────────╮
+│ Layer           │ Annotations │ Summary                          │
+├─────────────────┼─────────────┼──────────────────────────────────┤
+│ debug_box       │ 0           │ ObbTextGenerator.AnnotationLayer │
+│ debug_obb_font  │ 0           │ ObbTextGenerator.AnnotationLayer │
+│ debug_paddledet │ 5           │ ObbTextGenerator.AnnotationLayer │
+│ debug_xheight   │ 0           │ ObbTextGenerator.AnnotationLayer │
+│ paddledet_obb   │ 5           │ ObbTextGenerator.AnnotationLayer │
+╰─────────────────┴─────────────┴──────────────────────────────────╯
+
+
+                                                              Sample Data                                                              
+╭────────────────────┬────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Key                │ Type   │ Summary                                                                                               │
+├────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ paddledet.mask     │ Mat    │ Mat [ 640*640*CV_32FC1, IsContinuous=True, IsSubmatrix=False, Ptr=0x1b9355d0110, Data=0x1b4ea43c080 ] │
+│ paddledet.polygons │ List`1 │ List`1 (Count = 5)                                                                                    │
+╰────────────────────┴────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+                                                                              Trace Entries                                                                              
+╭────┬───────┬─────────────────────────────────────────────────────┬────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ #  │ Depth │ Summary                                             │ Details                                                                                            │
+├────┼───────┼─────────────────────────────────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 0  │ 0     │ scheme-selector: neutral-demo                       │                                                                                                    │
+│ 1  │ 0     │ program: scene-demo                                 │                                                                                                    │
+│ 2  │ 1     │ select: scene-source                                │                                                                                                    │
+│ 3  │ 2     │ select scene-source -> scene-source-text-image-only │                                                                                                    │
+│ 4  │ 2     │ program: scene-source-text-image-only               │                                                                                                    │
+│ 5  │ 3     │ image-folder                                        │                                                                                                    │
+│ 6  │ 3     │ image-folder: bg_00139_nmj9p8.jpg                   │                                                                                                    │
+│ 7  │ 0     │ write-image: images                                 │ file=016001.jpg                                                                                    │
+│ 8  │ 0     │ write-yolo-box: labels_box                          │ source=text-lines layer=debug_box                                                                  │
+│ 9  │ 0     │ write-yolo-obb: labels_obb_font                     │ source=text-lines layer=debug_obb_font                                                             │
+│ 10 │ 0     │ write-yolo-obb: labels_obb_xheight                  │ source=text-lines layer=debug_xheight                                                              │
+│ 11 │ 0     │ paddledet                                           │ layer=paddledet_obb image=640x640                                                                  │
+│    │       │                                                     │ model=C:\GitKOE\ObbTextGenerator\models\paddleocr\detection\v5\det.onnx backend=Cuda               │
+│    │       │                                                     │ accessMode=PerThread mask=640x640 maskKey=paddledet.mask polygonsKey=paddledet.polygons            │
+│ 12 │ 0     │ write-yolo-obb-layer: labels_obb_paddledet          │ source-layer=paddledet_obb feedback-layer=debug_paddledet written=5 skipped=0                      │
+│ 13 │ 0     │ debug-preview: debug_preview                        │ file=016001.jpg                                                                                    │
+╰────┴───────┴─────────────────────────────────────────────────────┴────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+================================================================================
+RenderContext.Tree
+================================================================================
+RenderContext.Tree: ObbTextGenerator.RenderContext
+├── ActivePattern: <null>
+├── ActivePatternName: ""
+├── ActiveScheme: ColorSchemeSettings { Name = neutral-demo, Roles = System.Collections.Generic.Dictionary`2[System.String,ObbTextGenerator.ColorProviderSettingsBase] }
+│   ├── Name: "neutral-demo"
+│   └── Roles: Dictionary`2 (Count = 14)
+│       ├── [scene_bg]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "255"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "210"
+│       │   │   └── [1]: "242"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "216"
+│       │   │   └── [1]: "246"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "214"
+│       │       └── [1]: "246"
+│       ├── [warm_bg]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "255"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "195"
+│       │   │   └── [1]: "228"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "220"
+│       │   │   └── [1]: "245"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "226"
+│       │       └── [1]: "250"
+│       ├── [cool_bg]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "255"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "232"
+│       │   │   └── [1]: "255"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "220"
+│       │   │   └── [1]: "246"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "205"
+│       │       └── [1]: "235"
+│       ├── [fiber_light]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "120"
+│       │   │   └── [1]: "220"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "220"
+│       │   │   └── [1]: "250"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "230"
+│       │   │   └── [1]: "255"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "230"
+│       │       └── [1]: "255"
+│       ├── [fiber_dark]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "90"
+│       │   │   └── [1]: "170"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "115"
+│       │   │   └── [1]: "170"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "125"
+│       │   │   └── [1]: "180"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "120"
+│       │       └── [1]: "180"
+│       ├── [dot_a]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "70"
+│       │   │   └── [1]: "150"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "70"
+│       │   │   └── [1]: "140"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "70"
+│       │   │   └── [1]: "145"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "230"
+│       │       └── [1]: "255"
+│       ├── [dot_b]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "60"
+│       │   │   └── [1]: "140"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "210"
+│       │   │   └── [1]: "255"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "120"
+│       │   │   └── [1]: "210"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "70"
+│       │       └── [1]: "150"
+│       ├── [text_dark]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "210"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "5"
+│       │   │   └── [1]: "45"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "5"
+│       │   │   └── [1]: "45"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "5"
+│       │       └── [1]: "45"
+│       ├── [text_color]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "180"
+│       │   │   └── [1]: "245"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "20"
+│       │   │   └── [1]: "120"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "20"
+│       │   │   └── [1]: "120"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "20"
+│       │       └── [1]: "120"
+│       ├── [stain]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "25"
+│       │   │   └── [1]: "90"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "25"
+│       │   │   └── [1]: "105"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "35"
+│       │   │   └── [1]: "125"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "40"
+│       │       └── [1]: "150"
+│       ├── [overlay_obb]: ObbTextGenerator.ConstantColorProviderSettings
+│       │   └── Color: "#00FF00"
+│       ├── [overlay_box]: ObbTextGenerator.ConstantColorProviderSettings
+│       │   └── Color: "#FF00FF"
+│       ├── [overlay_xheight]: ObbTextGenerator.ConstantColorProviderSettings
+│       │   └── Color: "#20A0FF"
+│       └── [overlay_paddledet]: ObbTextGenerator.ConstantColorProviderSettings
+│           └── Color: "#8000A000"
+├── AnnotationLayers: Dictionary`2 (Count = 5)
+│   ├── [debug_box]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 0)
+│   ├── [debug_obb_font]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 0)
+│   ├── [debug_xheight]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 0)
+│   ├── [paddledet_obb]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 5)
+│   │       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (251.602, 403.737)
+│   │       │   │   ├── [1]: (468.8, 411.654)
+│   │       │   │   ├── [2]: (468.068, 431.733)
+│   │       │   │   └── [3]: (250.87, 423.815)
+│   │       │   └── Text: "paddledet"
+│   │       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (218.419, 355.721)
+│   │       │   │   ├── [1]: (502.175, 378.408)
+│   │       │   │   ├── [2]: (500.463, 399.825)
+│   │       │   │   └── [3]: (216.707, 377.138)
+│   │       │   └── Text: "paddledet"
+│   │       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (242.488, 321.585)
+│   │       │   │   ├── [1]: (484.955, 338.649)
+│   │       │   │   ├── [2]: (483.804, 355.006)
+│   │       │   │   └── [3]: (241.337, 337.942)
+│   │       │   └── Text: "paddledet"
+│   │       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (267.257, 276.179)
+│   │       │   │   ├── [1]: (456.622, 291.96)
+│   │       │   │   ├── [2]: (454.862, 313.081)
+│   │       │   │   └── [3]: (265.497, 297.3)
+│   │       │   └── Text: "paddledet"
+│   │       └── [4]: ObbTextGenerator.ShapeAnnotation
+│   │           ├── ClassId: 0
+│   │           ├── Metadata: Dictionary`2 (Count = 0)
+│   │           ├── Points: SKPoint[] (Count = 4)
+│   │           │   ├── [0]: (111.13, 225.839)
+│   │           │   ├── [1]: (643.647, 263.397)
+│   │           │   ├── [2]: (642.208, 283.792)
+│   │           │   └── [3]: (109.691, 246.234)
+│   │           └── Text: "paddledet"
+│   └── [debug_paddledet]: ObbTextGenerator.AnnotationLayer
+│       └── Annotations: List`1 (Count = 5)
+│           ├── [0]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (251.602, 403.737)
+│           │   │   ├── [1]: (468.8, 411.654)
+│           │   │   ├── [2]: (468.068, 431.733)
+│           │   │   └── [3]: (250.87, 423.815)
+│           │   └── Text: "paddledet"
+│           ├── [1]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (218.419, 355.721)
+│           │   │   ├── [1]: (502.175, 378.408)
+│           │   │   ├── [2]: (500.463, 399.825)
+│           │   │   └── [3]: (216.707, 377.138)
+│           │   └── Text: "paddledet"
+│           ├── [2]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (242.488, 321.585)
+│           │   │   ├── [1]: (484.955, 338.649)
+│           │   │   ├── [2]: (483.804, 355.006)
+│           │   │   └── [3]: (241.337, 337.942)
+│           │   └── Text: "paddledet"
+│           ├── [3]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (267.257, 276.179)
+│           │   │   ├── [1]: (456.622, 291.96)
+│           │   │   ├── [2]: (454.862, 313.081)
+│           │   │   └── [3]: (265.497, 297.3)
+│           │   └── Text: "paddledet"
+│           └── [4]: ObbTextGenerator.ShapeAnnotation
+│               ├── ClassId: 0
+│               ├── Metadata: Dictionary`2 (Count = 0)
+│               ├── Points: SKPoint[] (Count = 4)
+│               │   ├── [0]: (111.13, 225.839)
+│               │   ├── [1]: (643.647, 263.397)
+│               │   ├── [2]: (642.208, 283.792)
+│               │   └── [3]: (109.691, 246.234)
+│               └── Text: "paddledet"
+├── Bitmap: SKBitmap { Width = 640, Height = 640, ColorType = Bgra8888, AlphaType = Premul }
+├── Canvas: SKCanvas { opaque runtime canvas }
+├── Height: 640
+├── LocalToParentRotation: 0
+├── LocalToParentTransform: [1, 0, 0; 0, 1, 0; 0, 0, 1]
+├── ParentContext: <null>
+├── SampleData: Dictionary`2 (Count = 2)
+│   ├── [paddledet.mask]: Mat [ 640*640*CV_32FC1, IsContinuous=True, IsSubmatrix=False, Ptr=0x1b9355d0110, Data=0x1b4ea43c080 ]
+│   │   ├── Cols: 640
+│   │   ├── CvPtr: 1894975865104
+│   │   ├── Data: 1876536049792
+│   │   ├── DataEnd: 1876537688192
+│   │   ├── DataLimit: 1876537688192
+│   │   ├── DataPointer: System.Reflection.Pointer
+│   │   ├── DataStart: 1876536049792
+│   │   ├── Dims: 2
+│   │   ├── Flags: 1124024325
+│   │   ├── Height: 640
+│   │   ├── IsDisposed: false
+│   │   ├── IsEnabledDispose: true
+│   │   ├── Rows: 640
+│   │   └── Width: 640
+│   └── [paddledet.polygons]: List`1 (Count = 5)
+│       ├── [0]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (251.602, 403.737)
+│       │   ├── [1]: (468.8, 411.654)
+│       │   ├── [2]: (468.068, 431.733)
+│       │   └── [3]: (250.87, 423.815)
+│       ├── [1]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (218.419, 355.721)
+│       │   ├── [1]: (502.175, 378.408)
+│       │   ├── [2]: (500.463, 399.825)
+│       │   └── [3]: (216.707, 377.138)
+│       ├── [2]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (242.488, 321.585)
+│       │   ├── [1]: (484.955, 338.649)
+│       │   ├── [2]: (483.804, 355.006)
+│       │   └── [3]: (241.337, 337.942)
+│       ├── [3]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (267.257, 276.179)
+│       │   ├── [1]: (456.622, 291.96)
+│       │   ├── [2]: (454.862, 313.081)
+│       │   └── [3]: (265.497, 297.3)
+│       └── [4]: SKPoint[] (Count = 4)
+│           ├── [0]: (111.13, 225.839)
+│           ├── [1]: (643.647, 263.397)
+│           ├── [2]: (642.208, 283.792)
+│           └── [3]: (109.691, 246.234)
+├── SampleIndex: 16001
+├── Session: ObbTextGenerator.RenderSession
+├── SetName: "val"
+├── Settings: ObbTextGenerator.RenderSettings
+│   ├── DebugEnabled: false
+│   ├── Height: 640
+│   ├── Random: System.Random
+│   └── Width: 640
+├── TextLines: List`1 (Count = 0)
+├── TraceEntries: List`1 (Count = 14)
+│   ├── [0]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: <null>
+│   │   └── Summary: "scheme-selector: neutral-demo"
+│   ├── [1]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: scene-demo"
+│   ├── [2]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 1
+│   │   ├── Details: <null>
+│   │   └── Summary: "select: scene-source"
+│   ├── [3]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 2
+│   │   ├── Details: <null>
+│   │   └── Summary: "select scene-source -> scene-source-text-image-only"
+│   ├── [4]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 2
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: scene-source-text-image-only"
+│   ├── [5]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 3
+│   │   ├── Details: <null>
+│   │   └── Summary: "image-folder"
+│   ├── [6]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 3
+│   │   ├── Details: <null>
+│   │   └── Summary: "image-folder: bg_00139_nmj9p8.jpg"
+│   ├── [7]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "file=016001.jpg"
+│   │   └── Summary: "write-image: images"
+│   ├── [8]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source=text-lines layer=debug_box"
+│   │   └── Summary: "write-yolo-box: labels_box"
+│   ├── [9]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source=text-lines layer=debug_obb_font"
+│   │   └── Summary: "write-yolo-obb: labels_obb_font"
+│   ├── [10]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source=text-lines layer=debug_xheight"
+│   │   └── Summary: "write-yolo-obb: labels_obb_xheight"
+│   ├── [11]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "layer=paddledet_obb image=640x640 model=C:\GitKOE\ObbTextGenerator\models\paddleocr\detection\v5\det.onnx backend=Cuda accessMode=PerThread 
+│   │   │   mask=640x640 maskKey=paddledet.mask polygonsKey=paddledet.polygons"
+│   │   └── Summary: "paddledet"
+│   ├── [12]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source-layer=paddledet_obb feedback-layer=debug_paddledet written=5 skipped=0"
+│   │   └── Summary: "write-yolo-obb-layer: labels_obb_paddledet"
+│   └── [13]: ObbTextGenerator.RenderTraceEntry
+│       ├── Depth: 0
+│       ├── Details: "file=016001.jpg"
+│       └── Summary: "debug-preview: debug_preview"
+└── Width: 640
+
+
+================================================================================
+RenderContext.Settings.Tree
+================================================================================
+RenderContext.Settings.Tree: ObbTextGenerator.RenderSettings
+├── DebugEnabled: false
+├── Height: 640
+├── Random: System.Random
+└── Width: 640
+
+
+================================================================================
+RenderContext.TextLines.Tree
+================================================================================
+RenderContext.TextLines.Tree: List`1 (Count = 0)
+
+
+================================================================================
+RenderContext.AnnotationLayers.Tree
+================================================================================
+RenderContext.AnnotationLayers.Tree: Dictionary`2 (Count = 5)
+├── [debug_box]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 0)
+├── [debug_obb_font]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 0)
+├── [debug_xheight]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 0)
+├── [paddledet_obb]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 5)
+│       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (251.602, 403.737)
+│       │   │   ├── [1]: (468.8, 411.654)
+│       │   │   ├── [2]: (468.068, 431.733)
+│       │   │   └── [3]: (250.87, 423.815)
+│       │   └── Text: "paddledet"
+│       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (218.419, 355.721)
+│       │   │   ├── [1]: (502.175, 378.408)
+│       │   │   ├── [2]: (500.463, 399.825)
+│       │   │   └── [3]: (216.707, 377.138)
+│       │   └── Text: "paddledet"
+│       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (242.488, 321.585)
+│       │   │   ├── [1]: (484.955, 338.649)
+│       │   │   ├── [2]: (483.804, 355.006)
+│       │   │   └── [3]: (241.337, 337.942)
+│       │   └── Text: "paddledet"
+│       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (267.257, 276.179)
+│       │   │   ├── [1]: (456.622, 291.96)
+│       │   │   ├── [2]: (454.862, 313.081)
+│       │   │   └── [3]: (265.497, 297.3)
+│       │   └── Text: "paddledet"
+│       └── [4]: ObbTextGenerator.ShapeAnnotation
+│           ├── ClassId: 0
+│           ├── Metadata: Dictionary`2 (Count = 0)
+│           ├── Points: SKPoint[] (Count = 4)
+│           │   ├── [0]: (111.13, 225.839)
+│           │   ├── [1]: (643.647, 263.397)
+│           │   ├── [2]: (642.208, 283.792)
+│           │   └── [3]: (109.691, 246.234)
+│           └── Text: "paddledet"
+└── [debug_paddledet]: ObbTextGenerator.AnnotationLayer
+    └── Annotations: List`1 (Count = 5)
+        ├── [0]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (251.602, 403.737)
+        │   │   ├── [1]: (468.8, 411.654)
+        │   │   ├── [2]: (468.068, 431.733)
+        │   │   └── [3]: (250.87, 423.815)
+        │   └── Text: "paddledet"
+        ├── [1]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (218.419, 355.721)
+        │   │   ├── [1]: (502.175, 378.408)
+        │   │   ├── [2]: (500.463, 399.825)
+        │   │   └── [3]: (216.707, 377.138)
+        │   └── Text: "paddledet"
+        ├── [2]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (242.488, 321.585)
+        │   │   ├── [1]: (484.955, 338.649)
+        │   │   ├── [2]: (483.804, 355.006)
+        │   │   └── [3]: (241.337, 337.942)
+        │   └── Text: "paddledet"
+        ├── [3]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (267.257, 276.179)
+        │   │   ├── [1]: (456.622, 291.96)
+        │   │   ├── [2]: (454.862, 313.081)
+        │   │   └── [3]: (265.497, 297.3)
+        │   └── Text: "paddledet"
+        └── [4]: ObbTextGenerator.ShapeAnnotation
+            ├── ClassId: 0
+            ├── Metadata: Dictionary`2 (Count = 0)
+            ├── Points: SKPoint[] (Count = 4)
+            │   ├── [0]: (111.13, 225.839)
+            │   ├── [1]: (643.647, 263.397)
+            │   ├── [2]: (642.208, 283.792)
+            │   └── [3]: (109.691, 246.234)
+            └── Text: "paddledet"
+
+
+================================================================================
+RenderContext.SampleData.Tree
+================================================================================
+RenderContext.SampleData.Tree: Dictionary`2 (Count = 2)
+├── [paddledet.mask]: Mat [ 640*640*CV_32FC1, IsContinuous=True, IsSubmatrix=False, Ptr=0x1b9355d0110, Data=0x1b4ea43c080 ]
+│   ├── Cols: 640
+│   ├── CvPtr: 1894975865104
+│   ├── Data: 1876536049792
+│   ├── DataEnd: 1876537688192
+│   ├── DataLimit: 1876537688192
+│   ├── DataPointer: System.Reflection.Pointer
+│   ├── DataStart: 1876536049792
+│   ├── Dims: 2
+│   ├── Flags: 1124024325
+│   ├── Height: 640
+│   ├── IsDisposed: false
+│   ├── IsEnabledDispose: true
+│   ├── Rows: 640
+│   └── Width: 640
+└── [paddledet.polygons]: List`1 (Count = 5)
+    ├── [0]: SKPoint[] (Count = 4)
+    │   ├── [0]: (251.602, 403.737)
+    │   ├── [1]: (468.8, 411.654)
+    │   ├── [2]: (468.068, 431.733)
+    │   └── [3]: (250.87, 423.815)
+    ├── [1]: SKPoint[] (Count = 4)
+    │   ├── [0]: (218.419, 355.721)
+    │   ├── [1]: (502.175, 378.408)
+    │   ├── [2]: (500.463, 399.825)
+    │   └── [3]: (216.707, 377.138)
+    ├── [2]: SKPoint[] (Count = 4)
+    │   ├── [0]: (242.488, 321.585)
+    │   ├── [1]: (484.955, 338.649)
+    │   ├── [2]: (483.804, 355.006)
+    │   └── [3]: (241.337, 337.942)
+    ├── [3]: SKPoint[] (Count = 4)
+    │   ├── [0]: (267.257, 276.179)
+    │   ├── [1]: (456.622, 291.96)
+    │   ├── [2]: (454.862, 313.081)
+    │   └── [3]: (265.497, 297.3)
+    └── [4]: SKPoint[] (Count = 4)
+        ├── [0]: (111.13, 225.839)
+        ├── [1]: (643.647, 263.397)
+        ├── [2]: (642.208, 283.792)
+        └── [3]: (109.691, 246.234)
+
+
+================================================================================
+RenderContext.TraceEntries.Tree
+================================================================================
+RenderContext.TraceEntries.Tree: List`1 (Count = 14)
+├── [0]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: <null>
+│   └── Summary: "scheme-selector: neutral-demo"
+├── [1]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: <null>
+│   └── Summary: "program: scene-demo"
+├── [2]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 1
+│   ├── Details: <null>
+│   └── Summary: "select: scene-source"
+├── [3]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 2
+│   ├── Details: <null>
+│   └── Summary: "select scene-source -> scene-source-text-image-only"
+├── [4]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 2
+│   ├── Details: <null>
+│   └── Summary: "program: scene-source-text-image-only"
+├── [5]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 3
+│   ├── Details: <null>
+│   └── Summary: "image-folder"
+├── [6]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 3
+│   ├── Details: <null>
+│   └── Summary: "image-folder: bg_00139_nmj9p8.jpg"
+├── [7]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "file=016001.jpg"
+│   └── Summary: "write-image: images"
+├── [8]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source=text-lines layer=debug_box"
+│   └── Summary: "write-yolo-box: labels_box"
+├── [9]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source=text-lines layer=debug_obb_font"
+│   └── Summary: "write-yolo-obb: labels_obb_font"
+├── [10]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source=text-lines layer=debug_xheight"
+│   └── Summary: "write-yolo-obb: labels_obb_xheight"
+├── [11]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "layer=paddledet_obb image=640x640 model=C:\GitKOE\ObbTextGenerator\models\paddleocr\detection\v5\det.onnx backend=Cuda accessMode=PerThread 
+│   │   mask=640x640 maskKey=paddledet.mask polygonsKey=paddledet.polygons"
+│   └── Summary: "paddledet"
+├── [12]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source-layer=paddledet_obb feedback-layer=debug_paddledet written=5 skipped=0"
+│   └── Summary: "write-yolo-obb-layer: labels_obb_paddledet"
+└── [13]: ObbTextGenerator.RenderTraceEntry
+    ├── Depth: 0
+    ├── Details: "file=016001.jpg"
+    └── Summary: "debug-preview: debug_preview"
+
+

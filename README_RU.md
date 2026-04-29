@@ -13,6 +13,14 @@
 - debug previews;
 - context dumps для проверки.
 
+## Примеры генерации
+
+| Sample | Image | Debug Preview |
+|---|---|---|
+| Image<br/>PaddleDet | <img src="doc/generated/images/016001.jpg" height="220"> | <img src="doc/generated/debug_preview/016001.jpg" height="220"> |
+| Light Sheme<br/>Pattern<br/>Text<br/>PaddleDet | <img src="doc/generated/images/016031.jpg" height="220"> | <img src="doc/generated/debug_preview/016031.jpg" height="220"> |
+| Dark  Sheme<br/>Pattern<br/>Text<br/>PaddleDet | <img src="doc/generated/images/016271.jpg" height="220"> | <img src="doc/generated/debug_preview/016271.jpg" height="220"> |
+
 ## Требования
 
 - .NET SDK под target framework решения;

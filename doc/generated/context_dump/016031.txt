@@ -1,0 +1,1665 @@
+OBB TEXT GENERATOR CONTEXT DUMP
+FormatVersion: 1
+Purpose: Human-readable snapshot of the current RenderContext state.
+================================================================================
+
+SampleIndex: 16031
+SetName: val
+CanvasSize: 640 x 640
+TextLineCount: 5
+AnnotationLayerCount: 6
+SampleDataCount: 2
+TraceEntryCount: 36
+
+           Context Summary           
+╭───────────────────┬───────────────╮
+│ Key               │ Value         │
+├───────────────────┼───────────────┤
+│ SampleIndex       │ 16031         │
+│ SetName           │ val           │
+│ Width             │ 640           │
+│ Height            │ 640           │
+│ HasParentContext  │ False         │
+│ ActivePatternName │ fine-speckles │
+│ ActiveScheme      │ neutral-demo  │
+│ TextLines         │ 5             │
+│ AnnotationLayers  │ 6             │
+│ SampleDataItems   │ 2             │
+│ TraceEntries      │ 36            │
+╰───────────────────┴───────────────╯
+
+
+                                                   TextLines                                                    
+╭───┬─────────┬──────────────────────┬────────────────────┬──────────┬──────────────────────────────────┬──────╮
+│ # │ ClassId │ Text                 │ Origin             │ Rotation │ BlockId                          │ Line │
+├───┼─────────┼──────────────────────┼────────────────────┼──────────┼──────────────────────────────────┼──────┤
+│ 0 │ 0       │ Wbo                  │ (207.618, 282.267) │ -5.137   │ 46ad2257a85348efb71d952a1b26d2e4 │ 1/3  │
+│ 1 │ 0       │ 08b4 7r5 ur 3lommkl2 │ (207.618, 315.61)  │ -5.137   │ 46ad2257a85348efb71d952a1b26d2e4 │ 2/3  │
+│ 2 │ 0       │ Hrrdr                │ (207.618, 348.952) │ -5.137   │ 46ad2257a85348efb71d952a1b26d2e4 │ 3/3  │
+│ 3 │ 0       │ BOX-AA-46            │ (19.938, 491.961)  │ 4.501    │ 1d153bcf69c9477792e8dc63f3b23441 │ 1/1  │
+│ 4 │ 0       │ ZONE P-2             │ (31.321, 253.822)  │ -15.901  │ c9feaaa7e4f84e6b94a28cec05d681fe │ 1/1  │
+╰───┴─────────┴──────────────────────┴────────────────────┴──────────┴──────────────────────────────────┴──────╯
+
+
+                         Annotation Layers                          
+╭─────────────────┬─────────────┬──────────────────────────────────╮
+│ Layer           │ Annotations │ Summary                          │
+├─────────────────┼─────────────┼──────────────────────────────────┤
+│ collision       │ 5           │ ObbTextGenerator.AnnotationLayer │
+│ debug_box       │ 5           │ ObbTextGenerator.AnnotationLayer │
+│ debug_obb_font  │ 5           │ ObbTextGenerator.AnnotationLayer │
+│ debug_paddledet │ 5           │ ObbTextGenerator.AnnotationLayer │
+│ debug_xheight   │ 5           │ ObbTextGenerator.AnnotationLayer │
+│ paddledet_obb   │ 5           │ ObbTextGenerator.AnnotationLayer │
+╰─────────────────┴─────────────┴──────────────────────────────────╯
+
+
+                                                              Sample Data                                                              
+╭────────────────────┬────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Key                │ Type   │ Summary                                                                                               │
+├────────────────────┼────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ paddledet.mask     │ Mat    │ Mat [ 640*640*CV_32FC1, IsContinuous=True, IsSubmatrix=False, Ptr=0x1b5f56fcfa0, Data=0x1b504456080 ] │
+│ paddledet.polygons │ List`1 │ List`1 (Count = 5)                                                                                    │
+╰────────────────────┴────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+                                                                              Trace Entries                                                                              
+╭────┬───────┬──────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────────────╮
+│ #  │ Depth │ Summary                                                  │ Details                                                                                       │
+├────┼───────┼──────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 0  │ 0     │ scheme-selector: neutral-demo                            │                                                                                               │
+│ 1  │ 0     │ program: scene-demo                                      │                                                                                               │
+│ 2  │ 1     │ select: scene-source                                     │                                                                                               │
+│ 3  │ 2     │ select scene-source -> scene-source-procedural-with-text │                                                                                               │
+│ 4  │ 2     │ program: scene-source-procedural-with-text               │                                                                                               │
+│ 5  │ 3     │ select: scene-base                                       │                                                                                               │
+│ 6  │ 4     │ select scene-base -> base-material                       │                                                                                               │
+│ 7  │ 4     │ program: base-material                                   │                                                                                               │
+│ 8  │ 5     │ background-fill                                          │                                                                                               │
+│ 9  │ 5     │ tiled-pattern                                            │                                                                                               │
+│ 10 │ 5     │ tiled-pattern: woven-cross                               │                                                                                               │
+│ 11 │ 5     │ noise-background                                         │                                                                                               │
+│ 12 │ 3     │ program: text-demo                                       │                                                                                               │
+│ 13 │ 4     │ text-line-stage class=0                                  │                                                                                               │
+│ 14 │ 4     │ text-line: class=0 generated=1                           │                                                                                               │
+│ 15 │ 4     │ text-line-stage class=0                                  │                                                                                               │
+│ 16 │ 4     │ text-line: class=0 generated=1                           │                                                                                               │
+│ 17 │ 4     │ text-line-stage class=0                                  │                                                                                               │
+│ 18 │ 4     │ text-line: class=0 generated=1                           │                                                                                               │
+│ 19 │ 3     │ select: wear                                             │                                                                                               │
+│ 20 │ 4     │ select wear -> wear-small                                │                                                                                               │
+│ 21 │ 4     │ program: wear-small                                      │                                                                                               │
+│ 22 │ 5     │ tiled-pattern                                            │                                                                                               │
+│ 23 │ 5     │ tiled-pattern: fine-speckles                             │                                                                                               │
+│ 24 │ 3     │ select: light                                            │                                                                                               │
+│ 25 │ 4     │ select light -> light-bright                             │                                                                                               │
+│ 26 │ 4     │ program: light-bright                                    │                                                                                               │
+│ 27 │ 5     │ spotlight                                                │                                                                                               │
+│ 28 │ 5     │ camera-effects                                           │                                                                                               │
+│ 29 │ 0     │ write-image: images                                      │ file=016031.jpg                                                                               │
+│ 30 │ 0     │ write-yolo-box: labels_box                               │ source=text-lines layer=debug_box                                                             │
+│ 31 │ 0     │ write-yolo-obb: labels_obb_font                          │ source=text-lines layer=debug_obb_font                                                        │
+│ 32 │ 0     │ write-yolo-obb: labels_obb_xheight                       │ source=text-lines layer=debug_xheight                                                         │
+│ 33 │ 0     │ paddledet                                                │ layer=paddledet_obb image=640x640                                                             │
+│    │       │                                                          │ model=C:\GitKOE\ObbTextGenerator\models\paddleocr\detection\v5\det.onnx backend=Cuda          │
+│    │       │                                                          │ accessMode=PerThread mask=640x640 maskKey=paddledet.mask polygonsKey=paddledet.polygons       │
+│ 34 │ 0     │ write-yolo-obb-layer: labels_obb_paddledet               │ source-layer=paddledet_obb feedback-layer=debug_paddledet written=5 skipped=0                 │
+│ 35 │ 0     │ debug-preview: debug_preview                             │ file=016031.jpg                                                                               │
+╰────┴───────┴──────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+================================================================================
+RenderContext.Tree
+================================================================================
+RenderContext.Tree: ObbTextGenerator.RenderContext
+├── ActivePattern: ObbTextGenerator.TiledPatternStageSettings
+│   ├── GlobalRotation: -30..30
+│   │   ├── Expression: "-30..30"
+│   │   ├── Maximum: 30
+│   │   │   ├── BaseValue: 30
+│   │   │   ├── IsPercent: false
+│   │   │   └── Offset: 0
+│   │   └── Minimum: -30
+│   │       ├── BaseValue: -30
+│   │       ├── IsPercent: false
+│   │       └── Offset: 0
+│   ├── Layers: List`1 (Count = 1)
+│   │   └── [0]: ObbTextGenerator.ScatterRandomLayerSettings
+│   │       ├── Alpha: 0.20..0.65
+│   │       │   ├── Expression: "0.20..0.65"
+│   │       │   ├── Maximum: 0.65
+│   │       │   │   ├── BaseValue: 0.65
+│   │       │   │   ├── IsPercent: false
+│   │       │   │   └── Offset: 0
+│   │       │   └── Minimum: 0.2
+│   │       │       ├── BaseValue: 0.2
+│   │       │       ├── IsPercent: false
+│   │       │       └── Offset: 0
+│   │       ├── BlendMode: Multiply
+│   │       ├── Color: ObbTextGenerator.FromSchemeColorProviderSettings
+│   │       │   └── Role: "stain"
+│   │       ├── Count: 16..48
+│   │       │   ├── Expression: "16..48"
+│   │       │   ├── Maximum: 48
+│   │       │   │   ├── BaseValue: 48
+│   │       │   │   ├── IsPercent: false
+│   │       │   │   └── Offset: 0
+│   │       │   └── Minimum: 16
+│   │       │       ├── BaseValue: 16
+│   │       │       ├── IsPercent: false
+│   │       │       └── Offset: 0
+│   │       ├── Rotation: 0..360
+│   │       │   ├── Expression: "0..360"
+│   │       │   ├── Maximum: 360
+│   │       │   │   ├── BaseValue: 360
+│   │       │   │   ├── IsPercent: false
+│   │       │   │   └── Offset: 0
+│   │       │   └── Minimum: 0
+│   │       │       ├── BaseValue: 0
+│   │       │       ├── IsPercent: false
+│   │       │       └── Offset: 0
+│   │       └── Width: 0.025..0.080
+│   │           ├── Expression: "0.025..0.080"
+│   │           ├── Maximum: 0.08
+│   │           │   ├── BaseValue: 0.08
+│   │           │   ├── IsPercent: false
+│   │           │   └── Offset: 0
+│   │           └── Minimum: 0.025
+│   │               ├── BaseValue: 0.025
+│   │               ├── IsPercent: false
+│   │               └── Offset: 0
+│   └── TileSize: 16..42
+│       ├── Expression: "16..42"
+│       ├── Maximum: 42
+│       │   ├── BaseValue: 42
+│       │   ├── IsPercent: false
+│       │   └── Offset: 0
+│       └── Minimum: 16
+│           ├── BaseValue: 16
+│           ├── IsPercent: false
+│           └── Offset: 0
+├── ActivePatternName: "fine-speckles"
+├── ActiveScheme: ColorSchemeSettings { Name = neutral-demo, Roles = System.Collections.Generic.Dictionary`2[System.String,ObbTextGenerator.ColorProviderSettingsBase] }
+│   ├── Name: "neutral-demo"
+│   └── Roles: Dictionary`2 (Count = 14)
+│       ├── [scene_bg]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "255"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "210"
+│       │   │   └── [1]: "242"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "216"
+│       │   │   └── [1]: "246"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "214"
+│       │       └── [1]: "246"
+│       ├── [warm_bg]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "255"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "195"
+│       │   │   └── [1]: "228"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "220"
+│       │   │   └── [1]: "245"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "226"
+│       │       └── [1]: "250"
+│       ├── [cool_bg]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "255"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "232"
+│       │   │   └── [1]: "255"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "220"
+│       │   │   └── [1]: "246"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "205"
+│       │       └── [1]: "235"
+│       ├── [fiber_light]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "120"
+│       │   │   └── [1]: "220"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "220"
+│       │   │   └── [1]: "250"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "230"
+│       │   │   └── [1]: "255"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "230"
+│       │       └── [1]: "255"
+│       ├── [fiber_dark]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "90"
+│       │   │   └── [1]: "170"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "115"
+│       │   │   └── [1]: "170"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "125"
+│       │   │   └── [1]: "180"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "120"
+│       │       └── [1]: "180"
+│       ├── [dot_a]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "70"
+│       │   │   └── [1]: "150"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "70"
+│       │   │   └── [1]: "140"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "70"
+│       │   │   └── [1]: "145"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "230"
+│       │       └── [1]: "255"
+│       ├── [dot_b]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "60"
+│       │   │   └── [1]: "140"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "210"
+│       │   │   └── [1]: "255"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "120"
+│       │   │   └── [1]: "210"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "70"
+│       │       └── [1]: "150"
+│       ├── [text_dark]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "210"
+│       │   │   └── [1]: "255"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "5"
+│       │   │   └── [1]: "45"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "5"
+│       │   │   └── [1]: "45"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "5"
+│       │       └── [1]: "45"
+│       ├── [text_color]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "180"
+│       │   │   └── [1]: "245"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "20"
+│       │   │   └── [1]: "120"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "20"
+│       │   │   └── [1]: "120"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "20"
+│       │       └── [1]: "120"
+│       ├── [stain]: ObbTextGenerator.RandomColorProviderSettings
+│       │   ├── A: List`1 (Count = 2)
+│       │   │   ├── [0]: "25"
+│       │   │   └── [1]: "90"
+│       │   ├── B: List`1 (Count = 2)
+│       │   │   ├── [0]: "25"
+│       │   │   └── [1]: "105"
+│       │   ├── G: List`1 (Count = 2)
+│       │   │   ├── [0]: "35"
+│       │   │   └── [1]: "125"
+│       │   ├── Preset: "any"
+│       │   └── R: List`1 (Count = 2)
+│       │       ├── [0]: "40"
+│       │       └── [1]: "150"
+│       ├── [overlay_obb]: ObbTextGenerator.ConstantColorProviderSettings
+│       │   └── Color: "#00FF00"
+│       ├── [overlay_box]: ObbTextGenerator.ConstantColorProviderSettings
+│       │   └── Color: "#FF00FF"
+│       ├── [overlay_xheight]: ObbTextGenerator.ConstantColorProviderSettings
+│       │   └── Color: "#20A0FF"
+│       └── [overlay_paddledet]: ObbTextGenerator.ConstantColorProviderSettings
+│           └── Color: "#8000A000"
+├── AnnotationLayers: Dictionary`2 (Count = 6)
+│   ├── [collision]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 5)
+│   │       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.559, 259.359)
+│   │       │   │   ├── [1]: (266.418, 253.888)
+│   │       │   │   ├── [2]: (268.478, 276.795)
+│   │       │   │   └── [3]: (207.618, 282.267)
+│   │       │   └── Text: "Wbo"
+│   │       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (207.551, 292.523)
+│   │       │   │   ├── [1]: (524.667, 264.013)
+│   │       │   │   ├── [2]: (526.727, 286.921)
+│   │       │   │   └── [3]: (209.61, 315.43)
+│   │       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│   │       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (207.551, 325.866)
+│   │       │   │   ├── [1]: (286.415, 318.776)
+│   │       │   │   ├── [2]: (288.475, 341.683)
+│   │       │   │   └── [3]: (209.61, 348.773)
+│   │       │   └── Text: "Hrrdr"
+│   │       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (25.204, 463.286)
+│   │       │   │   ├── [1]: (243.719, 480.487)
+│   │       │   │   ├── [2]: (241.443, 509.398)
+│   │       │   │   └── [3]: (22.928, 492.196)
+│   │       │   └── Text: "BOX-AA-46"
+│   │       └── [4]: ObbTextGenerator.ShapeAnnotation
+│   │           ├── ClassId: 0
+│   │           ├── Metadata: Dictionary`2 (Count = 0)
+│   │           ├── Points: SKPoint[] (Count = 4)
+│   │           │   ├── [0]: (25.165, 221.263)
+│   │           │   ├── [1]: (230.75, 162.697)
+│   │           │   ├── [2]: (239.791, 194.435)
+│   │           │   └── [3]: (34.206, 253.001)
+│   │           └── Text: "ZONE P-2"
+│   ├── [debug_box]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 5)
+│   │       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.312, 250.997)
+│   │       │   │   ├── [1]: (270.744, 250.997)
+│   │       │   │   ├── [2]: (270.744, 288.923)
+│   │       │   │   └── [3]: (205.312, 288.923)
+│   │       │   └── Text: "Wbo"
+│   │       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.312, 261.205)
+│   │       │   │   ├── [1]: (528.078, 261.205)
+│   │       │   │   ├── [2]: (528.078, 322.266)
+│   │       │   │   └── [3]: (205.312, 322.266)
+│   │       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│   │       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.312, 316.049)
+│   │       │   │   ├── [1]: (288.916, 316.049)
+│   │       │   │   ├── [2]: (288.916, 355.609)
+│   │       │   │   └── [3]: (205.312, 355.609)
+│   │       │   └── Text: "Hrrdr"
+│   │       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (19.156, 452.659)
+│   │       │   │   ├── [1]: (246.43, 452.659)
+│   │       │   │   ├── [2]: (246.43, 519.476)
+│   │       │   │   └── [3]: (19.156, 519.476)
+│   │       │   └── Text: "BOX-AA-46"
+│   │       └── [4]: ObbTextGenerator.ShapeAnnotation
+│   │           ├── ClassId: 0
+│   │           ├── Metadata: Dictionary`2 (Count = 0)
+│   │           ├── Points: SKPoint[] (Count = 4)
+│   │           │   ├── [0]: (19.438, 152.063)
+│   │           │   ├── [1]: (245.097, 152.063)
+│   │           │   ├── [2]: (245.097, 264.361)
+│   │           │   └── [3]: (19.438, 264.361)
+│   │           └── Text: "ZONE P-2"
+│   ├── [debug_obb_font]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 5)
+│   │       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.312, 256.619)
+│   │       │   │   ├── [1]: (267.84, 250.997)
+│   │       │   │   ├── [2]: (270.744, 283.302)
+│   │       │   │   └── [3]: (208.217, 288.923)
+│   │       │   └── Text: "Wbo"
+│   │       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.312, 289.961)
+│   │       │   │   ├── [1]: (525.174, 261.205)
+│   │       │   │   ├── [2]: (528.078, 293.51)
+│   │       │   │   └── [3]: (208.217, 322.266)
+│   │       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│   │       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (205.312, 323.304)
+│   │       │   │   ├── [1]: (286.011, 316.049)
+│   │       │   │   ├── [2]: (288.916, 348.354)
+│   │       │   │   └── [3]: (208.217, 355.609)
+│   │       │   └── Text: "Hrrdr"
+│   │       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (23.032, 452.659)
+│   │       │   │   ├── [1]: (246.43, 470.245)
+│   │       │   │   ├── [2]: (242.555, 519.476)
+│   │       │   │   └── [3]: (19.156, 501.89)
+│   │       │   └── Text: "BOX-AA-46"
+│   │       └── [4]: ObbTextGenerator.ShapeAnnotation
+│   │           ├── ClassId: 0
+│   │           ├── Metadata: Dictionary`2 (Count = 0)
+│   │           ├── Points: SKPoint[] (Count = 4)
+│   │           │   ├── [0]: (19.438, 212.107)
+│   │           │   ├── [1]: (230.211, 152.063)
+│   │           │   ├── [2]: (245.097, 204.317)
+│   │           │   └── [3]: (34.323, 264.361)
+│   │           └── Text: "ZONE P-2"
+│   ├── [debug_xheight]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 5)
+│   │       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (206.146, 265.894)
+│   │       │   │   ├── [1]: (268.674, 260.272)
+│   │       │   │   ├── [2]: (270.146, 276.645)
+│   │       │   │   └── [3]: (207.618, 282.267)
+│   │       │   └── Text: "Wbo"
+│   │       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (206.146, 299.236)
+│   │       │   │   ├── [1]: (526.008, 270.48)
+│   │       │   │   ├── [2]: (527.48, 286.853)
+│   │       │   │   └── [3]: (207.618, 315.61)
+│   │       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│   │       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (206.146, 332.579)
+│   │       │   │   ├── [1]: (286.845, 325.324)
+│   │       │   │   ├── [2]: (288.317, 341.697)
+│   │       │   │   └── [3]: (207.618, 348.952)
+│   │       │   └── Text: "Hrrdr"
+│   │       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (21.664, 470.035)
+│   │       │   │   ├── [1]: (245.063, 487.621)
+│   │       │   │   ├── [2]: (243.336, 509.547)
+│   │       │   │   └── [3]: (19.938, 491.961)
+│   │       │   └── Text: "BOX-AA-46"
+│   │       └── [4]: ObbTextGenerator.ShapeAnnotation
+│   │           ├── ClassId: 0
+│   │           ├── Metadata: Dictionary`2 (Count = 0)
+│   │           ├── Points: SKPoint[] (Count = 4)
+│   │           │   ├── [0]: (24.691, 230.55)
+│   │           │   ├── [1]: (235.465, 170.506)
+│   │           │   ├── [2]: (242.095, 193.779)
+│   │           │   └── [3]: (31.321, 253.822)
+│   │           └── Text: "ZONE P-2"
+│   ├── [paddledet_obb]: ObbTextGenerator.AnnotationLayer
+│   │   └── Annotations: List`1 (Count = 5)
+│   │       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (18.066, 468.423)
+│   │       │   │   ├── [1]: (249.267, 486.919)
+│   │       │   │   ├── [2]: (247.94, 503.498)
+│   │       │   │   └── [3]: (16.74, 485.002)
+│   │       │   └── Text: "paddledet"
+│   │       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (206.768, 328.545)
+│   │       │   │   ├── [1]: (298.146, 319.759)
+│   │       │   │   ├── [2]: (299.919, 338.197)
+│   │       │   │   └── [3]: (208.541, 346.983)
+│   │       │   └── Text: "paddledet"
+│   │       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (204.726, 296.714)
+│   │       │   │   ├── [1]: (532.256, 268.479)
+│   │       │   │   ├── [2]: (533.399, 281.741)
+│   │       │   │   └── [3]: (205.87, 309.976)
+│   │       │   └── Text: "paddledet"
+│   │       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│   │       │   ├── ClassId: 0
+│   │       │   ├── Metadata: Dictionary`2 (Count = 0)
+│   │       │   ├── Points: SKPoint[] (Count = 4)
+│   │       │   │   ├── [0]: (199.503, 260.099)
+│   │       │   │   ├── [1]: (272.92, 253.981)
+│   │       │   │   ├── [2]: (274.649, 274.722)
+│   │       │   │   └── [3]: (201.231, 280.84)
+│   │       │   └── Text: "paddledet"
+│   │       └── [4]: ObbTextGenerator.ShapeAnnotation
+│   │           ├── ClassId: 0
+│   │           ├── Metadata: Dictionary`2 (Count = 0)
+│   │           ├── Points: SKPoint[] (Count = 4)
+│   │           │   ├── [0]: (15.864, 223.218)
+│   │           │   ├── [1]: (240.782, 162.942)
+│   │           │   ├── [2]: (248.264, 190.859)
+│   │           │   └── [3]: (23.346, 251.135)
+│   │           └── Text: "paddledet"
+│   └── [debug_paddledet]: ObbTextGenerator.AnnotationLayer
+│       └── Annotations: List`1 (Count = 5)
+│           ├── [0]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (18.066, 468.423)
+│           │   │   ├── [1]: (249.267, 486.919)
+│           │   │   ├── [2]: (247.94, 503.498)
+│           │   │   └── [3]: (16.74, 485.002)
+│           │   └── Text: "paddledet"
+│           ├── [1]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (206.768, 328.545)
+│           │   │   ├── [1]: (298.146, 319.759)
+│           │   │   ├── [2]: (299.919, 338.197)
+│           │   │   └── [3]: (208.541, 346.983)
+│           │   └── Text: "paddledet"
+│           ├── [2]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (204.726, 296.714)
+│           │   │   ├── [1]: (532.256, 268.479)
+│           │   │   ├── [2]: (533.399, 281.741)
+│           │   │   └── [3]: (205.87, 309.976)
+│           │   └── Text: "paddledet"
+│           ├── [3]: ObbTextGenerator.ShapeAnnotation
+│           │   ├── ClassId: 0
+│           │   ├── Metadata: Dictionary`2 (Count = 0)
+│           │   ├── Points: SKPoint[] (Count = 4)
+│           │   │   ├── [0]: (199.503, 260.099)
+│           │   │   ├── [1]: (272.92, 253.981)
+│           │   │   ├── [2]: (274.649, 274.722)
+│           │   │   └── [3]: (201.231, 280.84)
+│           │   └── Text: "paddledet"
+│           └── [4]: ObbTextGenerator.ShapeAnnotation
+│               ├── ClassId: 0
+│               ├── Metadata: Dictionary`2 (Count = 0)
+│               ├── Points: SKPoint[] (Count = 4)
+│               │   ├── [0]: (15.864, 223.218)
+│               │   ├── [1]: (240.782, 162.942)
+│               │   ├── [2]: (248.264, 190.859)
+│               │   └── [3]: (23.346, 251.135)
+│               └── Text: "paddledet"
+├── Bitmap: SKBitmap { Width = 640, Height = 640, ColorType = Bgra8888, AlphaType = Premul }
+├── Canvas: SKCanvas { opaque runtime canvas }
+├── Height: 640
+├── LocalToParentRotation: 0
+├── LocalToParentTransform: [1, 0, 0; 0, 1, 0; 0, 0, 1]
+├── ParentContext: <null>
+├── SampleData: Dictionary`2 (Count = 2)
+│   ├── [paddledet.mask]: Mat [ 640*640*CV_32FC1, IsContinuous=True, IsSubmatrix=False, Ptr=0x1b5f56fcfa0, Data=0x1b504456080 ]
+│   │   ├── Cols: 640
+│   │   ├── CvPtr: 1881018453920
+│   │   ├── Data: 1876972363904
+│   │   ├── DataEnd: 1876974002304
+│   │   ├── DataLimit: 1876974002304
+│   │   ├── DataPointer: System.Reflection.Pointer
+│   │   ├── DataStart: 1876972363904
+│   │   ├── Dims: 2
+│   │   ├── Flags: 1124024325
+│   │   ├── Height: 640
+│   │   ├── IsDisposed: false
+│   │   ├── IsEnabledDispose: true
+│   │   ├── Rows: 640
+│   │   └── Width: 640
+│   └── [paddledet.polygons]: List`1 (Count = 5)
+│       ├── [0]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (18.066, 468.423)
+│       │   ├── [1]: (249.267, 486.919)
+│       │   ├── [2]: (247.94, 503.498)
+│       │   └── [3]: (16.74, 485.002)
+│       ├── [1]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (206.768, 328.545)
+│       │   ├── [1]: (298.146, 319.759)
+│       │   ├── [2]: (299.919, 338.197)
+│       │   └── [3]: (208.541, 346.983)
+│       ├── [2]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (204.726, 296.714)
+│       │   ├── [1]: (532.256, 268.479)
+│       │   ├── [2]: (533.399, 281.741)
+│       │   └── [3]: (205.87, 309.976)
+│       ├── [3]: SKPoint[] (Count = 4)
+│       │   ├── [0]: (199.503, 260.099)
+│       │   ├── [1]: (272.92, 253.981)
+│       │   ├── [2]: (274.649, 274.722)
+│       │   └── [3]: (201.231, 280.84)
+│       └── [4]: SKPoint[] (Count = 4)
+│           ├── [0]: (15.864, 223.218)
+│           ├── [1]: (240.782, 162.942)
+│           ├── [2]: (248.264, 190.859)
+│           └── [3]: (23.346, 251.135)
+├── SampleIndex: 16031
+├── Session: ObbTextGenerator.RenderSession
+├── SetName: "val"
+├── Settings: ObbTextGenerator.RenderSettings
+│   ├── DebugEnabled: false
+│   ├── Height: 640
+│   ├── Random: System.Random
+│   └── Width: 640
+├── TextLines: List`1 (Count = 5)
+│   ├── [0]: ObbTextGenerator.TextLineDescriptor
+│   │   ├── BlockCapHeightBounds: L=0, T=-23.028, R=321.151, B=66.686, W=321.151, H=89.713
+│   │   ├── BlockFontMetricsBounds: L=0, T=-25.752, R=321.151, B=73.369, W=321.151, H=99.121
+│   │   ├── BlockId: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   ├── BlockOrigin: (207.618, 282.267)
+│   │   ├── BlockTightBounds: L=0, T=-23, R=320.395, B=66.686, W=320.395, H=89.686
+│   │   ├── BlockXHeightBounds: L=0, T=-16.439, R=321.151, B=66.686, W=321.151, H=83.125
+│   │   ├── CapHeightBounds: L=0, T=-23.028, R=62.78, B=0, W=62.78, H=23.028
+│   │   ├── ClassId: 0
+│   │   ├── Font: SKFont { Size = 32.435, Typeface = Bahnschrift }
+│   │   ├── FontMetricsBounds: L=0, T=-25.752, R=62.78, B=6.683, W=62.78, H=32.435
+│   │   ├── LineCountInBlock: 3
+│   │   ├── LineIndexInBlock: 0
+│   │   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   │   ├── [textBlockText]: "Wbo
+│   │   │   │   08b4 7r5 ur 3lommkl2
+│   │   │   │   Hrrdr"
+│   │   │   ├── [textBlockId]: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   │   ├── [textBlockLineIndex]: "0"
+│   │   │   ├── [textBlockLineCount]: "3"
+│   │   │   ├── [textBlockTightObb]: "205.55878,259.3591 524.6671,230.67062 532.69763,319.99594 213.5893,348.68442"
+│   │   │   ├── [textBlockTightBox]: "205.55878,230.67062,532.69763,348.68442"
+│   │   │   ├── [textBlockFontMetricsObb]: "205.3124,256.6185 525.1737,227.86234 534.0491,326.58478 214.18774,355.34097"
+│   │   │   ├── [textBlockFontMetricsBox]: "205.3124,227.86234,534.0491,355.34097"
+│   │   │   ├── [textBlockCapHeightObb]: "205.5563,259.3316 525.4176,230.57544 533.4506,319.92822 213.5893,348.68442"
+│   │   │   ├── [textBlockCapHeightBox]: "205.5563,230.57544,533.4506,348.68442"
+│   │   │   ├── [textBlockXHeightObb]: "206.14624,265.8935 526.00757,237.13733 533.4506,319.92822 213.5893,348.68442"
+│   │   │   └── [textBlockXHeightBox]: "206.14624,237.13733,533.4506,348.68442"
+│   │   ├── Origin: (207.618, 282.267)
+│   │   ├── Paint: SKPaint { Color = rgba(9, 45, 16, 251), Style = Fill, StrokeWidth = 0 }
+│   │   ├── Rotation: -5.1371937
+│   │   ├── Text: "Wbo"
+│   │   ├── TightBounds: L=0, T=-23, R=61.105, B=0, W=61.105, H=23
+│   │   ├── TotalWidth: 62.779564
+│   │   └── XHeightBounds: L=0, T=-16.439, R=62.78, B=0, W=62.78, H=16.439
+│   ├── [1]: ObbTextGenerator.TextLineDescriptor
+│   │   ├── BlockCapHeightBounds: L=0, T=-23.028, R=321.151, B=66.686, W=321.151, H=89.713
+│   │   ├── BlockFontMetricsBounds: L=0, T=-25.752, R=321.151, B=73.369, W=321.151, H=99.121
+│   │   ├── BlockId: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   ├── BlockOrigin: (207.618, 282.267)
+│   │   ├── BlockTightBounds: L=0, T=-23, R=320.395, B=66.686, W=320.395, H=89.686
+│   │   ├── BlockXHeightBounds: L=0, T=-16.439, R=321.151, B=66.686, W=321.151, H=83.125
+│   │   ├── CapHeightBounds: L=0, T=-23.028, R=321.151, B=0, W=321.151, H=23.028
+│   │   ├── ClassId: 0
+│   │   ├── Font: SKFont { Size = 32.435, Typeface = Bahnschrift }
+│   │   ├── FontMetricsBounds: L=0, T=-25.752, R=321.151, B=6.683, W=321.151, H=32.435
+│   │   ├── LineCountInBlock: 3
+│   │   ├── LineIndexInBlock: 1
+│   │   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   │   ├── [textBlockText]: "Wbo
+│   │   │   │   08b4 7r5 ur 3lommkl2
+│   │   │   │   Hrrdr"
+│   │   │   ├── [textBlockId]: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   │   ├── [textBlockLineIndex]: "1"
+│   │   │   ├── [textBlockLineCount]: "3"
+│   │   │   ├── [textBlockTightObb]: "205.55878,259.3591 524.6671,230.67062 532.69763,319.99594 213.5893,348.68442"
+│   │   │   ├── [textBlockTightBox]: "205.55878,230.67062,532.69763,348.68442"
+│   │   │   ├── [textBlockFontMetricsObb]: "205.3124,256.6185 525.1737,227.86234 534.0491,326.58478 214.18774,355.34097"
+│   │   │   ├── [textBlockFontMetricsBox]: "205.3124,227.86234,534.0491,355.34097"
+│   │   │   ├── [textBlockCapHeightObb]: "205.5563,259.3316 525.4176,230.57544 533.4506,319.92822 213.5893,348.68442"
+│   │   │   ├── [textBlockCapHeightBox]: "205.5563,230.57544,533.4506,348.68442"
+│   │   │   ├── [textBlockXHeightObb]: "206.14624,265.8935 526.00757,237.13733 533.4506,319.92822 213.5893,348.68442"
+│   │   │   └── [textBlockXHeightBox]: "206.14624,237.13733,533.4506,348.68442"
+│   │   ├── Origin: (207.618, 315.61)
+│   │   ├── Paint: SKPaint { Color = rgba(9, 45, 16, 251), Style = Fill, StrokeWidth = 0 }
+│   │   ├── Rotation: -5.1371937
+│   │   ├── Text: "08b4 7r5 ur 3lommkl2"
+│   │   ├── TightBounds: L=2, T=-23, R=320.395, B=0, W=318.395, H=23
+│   │   ├── TotalWidth: 321.15137
+│   │   └── XHeightBounds: L=0, T=-16.439, R=321.151, B=0, W=321.151, H=16.439
+│   ├── [2]: ObbTextGenerator.TextLineDescriptor
+│   │   ├── BlockCapHeightBounds: L=0, T=-23.028, R=321.151, B=66.686, W=321.151, H=89.713
+│   │   ├── BlockFontMetricsBounds: L=0, T=-25.752, R=321.151, B=73.369, W=321.151, H=99.121
+│   │   ├── BlockId: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   ├── BlockOrigin: (207.618, 282.267)
+│   │   ├── BlockTightBounds: L=0, T=-23, R=320.395, B=66.686, W=320.395, H=89.686
+│   │   ├── BlockXHeightBounds: L=0, T=-16.439, R=321.151, B=66.686, W=321.151, H=83.125
+│   │   ├── CapHeightBounds: L=0, T=-23.028, R=81.024, B=0, W=81.024, H=23.028
+│   │   ├── ClassId: 0
+│   │   ├── Font: SKFont { Size = 32.435, Typeface = Bahnschrift }
+│   │   ├── FontMetricsBounds: L=0, T=-25.752, R=81.024, B=6.683, W=81.024, H=32.435
+│   │   ├── LineCountInBlock: 3
+│   │   ├── LineIndexInBlock: 2
+│   │   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   │   ├── [textBlockText]: "Wbo
+│   │   │   │   08b4 7r5 ur 3lommkl2
+│   │   │   │   Hrrdr"
+│   │   │   ├── [textBlockId]: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   │   ├── [textBlockLineIndex]: "2"
+│   │   │   ├── [textBlockLineCount]: "3"
+│   │   │   ├── [textBlockTightObb]: "205.55878,259.3591 524.6671,230.67062 532.69763,319.99594 213.5893,348.68442"
+│   │   │   ├── [textBlockTightBox]: "205.55878,230.67062,532.69763,348.68442"
+│   │   │   ├── [textBlockFontMetricsObb]: "205.3124,256.6185 525.1737,227.86234 534.0491,326.58478 214.18774,355.34097"
+│   │   │   ├── [textBlockFontMetricsBox]: "205.3124,227.86234,534.0491,355.34097"
+│   │   │   ├── [textBlockCapHeightObb]: "205.5563,259.3316 525.4176,230.57544 533.4506,319.92822 213.5893,348.68442"
+│   │   │   ├── [textBlockCapHeightBox]: "205.5563,230.57544,533.4506,348.68442"
+│   │   │   ├── [textBlockXHeightObb]: "206.14624,265.8935 526.00757,237.13733 533.4506,319.92822 213.5893,348.68442"
+│   │   │   └── [textBlockXHeightBox]: "206.14624,237.13733,533.4506,348.68442"
+│   │   ├── Origin: (207.618, 348.952)
+│   │   ├── Paint: SKPaint { Color = rgba(9, 45, 16, 251), Style = Fill, StrokeWidth = 0 }
+│   │   ├── Rotation: -5.1371937
+│   │   ├── Text: "Hrrdr"
+│   │   ├── TightBounds: L=2, T=-23, R=81.182, B=0, W=79.182, H=23
+│   │   ├── TotalWidth: 81.02428
+│   │   └── XHeightBounds: L=0, T=-16.439, R=81.024, B=0, W=81.024, H=16.439
+│   ├── [3]: ObbTextGenerator.TextLineDescriptor
+│   │   ├── BlockCapHeightBounds: L=0, T=-29.464, R=224.09, B=0, W=224.09, H=29.464
+│   │   ├── BlockFontMetricsBounds: L=0, T=-39.423, R=224.09, B=9.96, W=224.09, H=49.383
+│   │   ├── BlockId: "1d153bcf69c9477792e8dc63f3b23441"
+│   │   ├── BlockOrigin: (19.938, 491.961)
+│   │   ├── BlockTightBounds: L=3, T=-29, R=222.191, B=0, W=219.191, H=29
+│   │   ├── BlockXHeightBounds: L=0, T=-21.994, R=224.09, B=0, W=224.09, H=21.994
+│   │   ├── CapHeightBounds: L=0, T=-29.464, R=224.09, B=0, W=224.09, H=29.464
+│   │   ├── ClassId: 0
+│   │   ├── Font: SKFont { Size = 42.494, Typeface = Cascadia Mono }
+│   │   ├── FontMetricsBounds: L=0, T=-39.423, R=224.09, B=9.96, W=224.09, H=49.383
+│   │   ├── LineCountInBlock: 1
+│   │   ├── LineIndexInBlock: 0
+│   │   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   │   ├── [textBlockText]: "BOX-AA-46"
+│   │   │   ├── [textBlockId]: "1d153bcf69c9477792e8dc63f3b23441"
+│   │   │   ├── [textBlockLineIndex]: "0"
+│   │   │   ├── [textBlockLineCount]: "1"
+│   │   │   ├── [textBlockTightObb]: "25.204334,463.28583 243.71927,480.48737 241.44342,509.39792 22.92849,492.19638"
+│   │   │   ├── [textBlockTightBox]: "22.92849,463.28583,243.71927,509.39792"
+│   │   │   ├── [textBlockFontMetricsObb]: "23.031576,452.6593 246.43027,470.2453 242.55484,519.4757 19.156141,501.88977"
+│   │   │   ├── [textBlockFontMetricsBox]: "19.156141,452.6593,246.43027,519.4757"
+│   │   │   ├── [textBlockCapHeightObb]: "22.249975,462.58817 245.64868,480.17416 243.33643,509.54694 19.937742,491.96094"
+│   │   │   ├── [textBlockCapHeightBox]: "19.937742,462.58817,245.64868,509.54694"
+│   │   │   ├── [textBlockXHeightObb]: "21.663774,470.0348 245.06247,487.6208 243.33643,509.54694 19.937742,491.96094"
+│   │   │   └── [textBlockXHeightBox]: "19.937742,470.0348,245.06247,509.54694"
+│   │   ├── Origin: (19.938, 491.961)
+│   │   ├── Paint: SKPaint { Color = rgba(98, 22, 64, 232), Style = Fill, StrokeWidth = 0 }
+│   │   ├── Rotation: 4.5010557
+│   │   ├── Text: "BOX-AA-46"
+│   │   ├── TightBounds: L=3, T=-29, R=222.191, B=0, W=219.191, H=29
+│   │   ├── TotalWidth: 224.08981
+│   │   └── XHeightBounds: L=0, T=-21.994, R=224.09, B=0, W=224.09, H=21.994
+│   └── [4]: ObbTextGenerator.TextLineDescriptor
+│       ├── BlockCapHeightBounds: L=0, T=-32.417, R=219.159, B=0, W=219.159, H=32.417
+│       ├── BlockFontMetricsBounds: L=0, T=-43.375, R=219.159, B=10.958, W=219.159, H=54.333
+│       ├── BlockId: "c9feaaa7e4f84e6b94a28cec05d681fe"
+│       ├── BlockOrigin: (31.321, 253.822)
+│       ├── BlockTightBounds: L=3, T=-33, R=216.764, B=0, W=213.764, H=33
+│       ├── BlockXHeightBounds: L=0, T=-24.199, R=219.159, B=0, W=219.159, H=24.199
+│       ├── CapHeightBounds: L=0, T=-32.417, R=219.159, B=0, W=219.159, H=32.417
+│       ├── ClassId: 0
+│       ├── Font: SKFont { Size = 46.754, Typeface = Cascadia Mono }
+│       ├── FontMetricsBounds: L=0, T=-43.375, R=219.159, B=10.958, W=219.159, H=54.333
+│       ├── LineCountInBlock: 1
+│       ├── LineIndexInBlock: 0
+│       ├── Metadata: Dictionary`2 (Count = 12)
+│       │   ├── [textBlockText]: "ZONE P-2"
+│       │   ├── [textBlockId]: "c9feaaa7e4f84e6b94a28cec05d681fe"
+│       │   ├── [textBlockLineIndex]: "0"
+│       │   ├── [textBlockLineCount]: "1"
+│       │   ├── [textBlockTightObb]: "25.165314,221.26318 230.75014,162.69739 239.79128,194.4347 34.20645,253.00049"
+│       │   ├── [textBlockTightBox]: "25.165314,162.69739,239.79128,253.00049"
+│       │   ├── [textBlockFontMetricsObb]: "19.437569,212.10687 230.21083,152.06302 245.09673,204.31723 34.32344,264.36108"
+│       │   ├── [textBlockFontMetricsBox]: "19.437569,152.06302,245.09673,264.36108"
+│       │   ├── [textBlockCapHeightObb]: "22.439758,222.64554 233.21303,162.60168 242.09453,193.77856 31.321243,253.82242"
+│       │   ├── [textBlockCapHeightBox]: "22.439758,162.60168,242.09453,253.82242"
+│       │   ├── [textBlockXHeightObb]: "24.691406,230.54953 235.46468,170.50568 242.09453,193.77856 31.321243,253.82242"
+│       │   └── [textBlockXHeightBox]: "24.691406,170.50568,242.09453,253.82242"
+│       ├── Origin: (31.321, 253.822)
+│       ├── Paint: SKPaint { Color = rgba(26, 11, 25, 243), Style = Fill, StrokeWidth = 0 }
+│       ├── Rotation: -15.900881
+│       ├── Text: "ZONE P-2"
+│       ├── TightBounds: L=3, T=-33, R=216.764, B=0, W=213.764, H=33
+│       ├── TotalWidth: 219.15892
+│       └── XHeightBounds: L=0, T=-24.199, R=219.159, B=0, W=219.159, H=24.199
+├── TraceEntries: List`1 (Count = 36)
+│   ├── [0]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: <null>
+│   │   └── Summary: "scheme-selector: neutral-demo"
+│   ├── [1]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: scene-demo"
+│   ├── [2]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 1
+│   │   ├── Details: <null>
+│   │   └── Summary: "select: scene-source"
+│   ├── [3]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 2
+│   │   ├── Details: <null>
+│   │   └── Summary: "select scene-source -> scene-source-procedural-with-text"
+│   ├── [4]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 2
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: scene-source-procedural-with-text"
+│   ├── [5]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 3
+│   │   ├── Details: <null>
+│   │   └── Summary: "select: scene-base"
+│   ├── [6]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "select scene-base -> base-material"
+│   ├── [7]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: base-material"
+│   ├── [8]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "background-fill"
+│   ├── [9]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "tiled-pattern"
+│   ├── [10]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "tiled-pattern: woven-cross"
+│   ├── [11]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "noise-background"
+│   ├── [12]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 3
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: text-demo"
+│   ├── [13]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "text-line-stage class=0"
+│   ├── [14]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "text-line: class=0 generated=1"
+│   ├── [15]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "text-line-stage class=0"
+│   ├── [16]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "text-line: class=0 generated=1"
+│   ├── [17]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "text-line-stage class=0"
+│   ├── [18]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "text-line: class=0 generated=1"
+│   ├── [19]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 3
+│   │   ├── Details: <null>
+│   │   └── Summary: "select: wear"
+│   ├── [20]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "select wear -> wear-small"
+│   ├── [21]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: wear-small"
+│   ├── [22]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "tiled-pattern"
+│   ├── [23]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "tiled-pattern: fine-speckles"
+│   ├── [24]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 3
+│   │   ├── Details: <null>
+│   │   └── Summary: "select: light"
+│   ├── [25]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "select light -> light-bright"
+│   ├── [26]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 4
+│   │   ├── Details: <null>
+│   │   └── Summary: "program: light-bright"
+│   ├── [27]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "spotlight"
+│   ├── [28]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 5
+│   │   ├── Details: <null>
+│   │   └── Summary: "camera-effects"
+│   ├── [29]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "file=016031.jpg"
+│   │   └── Summary: "write-image: images"
+│   ├── [30]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source=text-lines layer=debug_box"
+│   │   └── Summary: "write-yolo-box: labels_box"
+│   ├── [31]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source=text-lines layer=debug_obb_font"
+│   │   └── Summary: "write-yolo-obb: labels_obb_font"
+│   ├── [32]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source=text-lines layer=debug_xheight"
+│   │   └── Summary: "write-yolo-obb: labels_obb_xheight"
+│   ├── [33]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "layer=paddledet_obb image=640x640 model=C:\GitKOE\ObbTextGenerator\models\paddleocr\detection\v5\det.onnx backend=Cuda accessMode=PerThread 
+│   │   │   mask=640x640 maskKey=paddledet.mask polygonsKey=paddledet.polygons"
+│   │   └── Summary: "paddledet"
+│   ├── [34]: ObbTextGenerator.RenderTraceEntry
+│   │   ├── Depth: 0
+│   │   ├── Details: "source-layer=paddledet_obb feedback-layer=debug_paddledet written=5 skipped=0"
+│   │   └── Summary: "write-yolo-obb-layer: labels_obb_paddledet"
+│   └── [35]: ObbTextGenerator.RenderTraceEntry
+│       ├── Depth: 0
+│       ├── Details: "file=016031.jpg"
+│       └── Summary: "debug-preview: debug_preview"
+└── Width: 640
+
+
+================================================================================
+RenderContext.Settings.Tree
+================================================================================
+RenderContext.Settings.Tree: ObbTextGenerator.RenderSettings
+├── DebugEnabled: false
+├── Height: 640
+├── Random: System.Random
+└── Width: 640
+
+
+================================================================================
+RenderContext.TextLines.Tree
+================================================================================
+RenderContext.TextLines.Tree: List`1 (Count = 5)
+├── [0]: ObbTextGenerator.TextLineDescriptor
+│   ├── BlockCapHeightBounds: L=0, T=-23.028, R=321.151, B=66.686, W=321.151, H=89.713
+│   ├── BlockFontMetricsBounds: L=0, T=-25.752, R=321.151, B=73.369, W=321.151, H=99.121
+│   ├── BlockId: "46ad2257a85348efb71d952a1b26d2e4"
+│   ├── BlockOrigin: (207.618, 282.267)
+│   ├── BlockTightBounds: L=0, T=-23, R=320.395, B=66.686, W=320.395, H=89.686
+│   ├── BlockXHeightBounds: L=0, T=-16.439, R=321.151, B=66.686, W=321.151, H=83.125
+│   ├── CapHeightBounds: L=0, T=-23.028, R=62.78, B=0, W=62.78, H=23.028
+│   ├── ClassId: 0
+│   ├── Font: SKFont { Size = 32.435, Typeface = Bahnschrift }
+│   ├── FontMetricsBounds: L=0, T=-25.752, R=62.78, B=6.683, W=62.78, H=32.435
+│   ├── LineCountInBlock: 3
+│   ├── LineIndexInBlock: 0
+│   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   ├── [textBlockText]: "Wbo
+│   │   │   08b4 7r5 ur 3lommkl2
+│   │   │   Hrrdr"
+│   │   ├── [textBlockId]: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   ├── [textBlockLineIndex]: "0"
+│   │   ├── [textBlockLineCount]: "3"
+│   │   ├── [textBlockTightObb]: "205.55878,259.3591 524.6671,230.67062 532.69763,319.99594 213.5893,348.68442"
+│   │   ├── [textBlockTightBox]: "205.55878,230.67062,532.69763,348.68442"
+│   │   ├── [textBlockFontMetricsObb]: "205.3124,256.6185 525.1737,227.86234 534.0491,326.58478 214.18774,355.34097"
+│   │   ├── [textBlockFontMetricsBox]: "205.3124,227.86234,534.0491,355.34097"
+│   │   ├── [textBlockCapHeightObb]: "205.5563,259.3316 525.4176,230.57544 533.4506,319.92822 213.5893,348.68442"
+│   │   ├── [textBlockCapHeightBox]: "205.5563,230.57544,533.4506,348.68442"
+│   │   ├── [textBlockXHeightObb]: "206.14624,265.8935 526.00757,237.13733 533.4506,319.92822 213.5893,348.68442"
+│   │   └── [textBlockXHeightBox]: "206.14624,237.13733,533.4506,348.68442"
+│   ├── Origin: (207.618, 282.267)
+│   ├── Paint: SKPaint { Color = rgba(9, 45, 16, 251), Style = Fill, StrokeWidth = 0 }
+│   ├── Rotation: -5.1371937
+│   ├── Text: "Wbo"
+│   ├── TightBounds: L=0, T=-23, R=61.105, B=0, W=61.105, H=23
+│   ├── TotalWidth: 62.779564
+│   └── XHeightBounds: L=0, T=-16.439, R=62.78, B=0, W=62.78, H=16.439
+├── [1]: ObbTextGenerator.TextLineDescriptor
+│   ├── BlockCapHeightBounds: L=0, T=-23.028, R=321.151, B=66.686, W=321.151, H=89.713
+│   ├── BlockFontMetricsBounds: L=0, T=-25.752, R=321.151, B=73.369, W=321.151, H=99.121
+│   ├── BlockId: "46ad2257a85348efb71d952a1b26d2e4"
+│   ├── BlockOrigin: (207.618, 282.267)
+│   ├── BlockTightBounds: L=0, T=-23, R=320.395, B=66.686, W=320.395, H=89.686
+│   ├── BlockXHeightBounds: L=0, T=-16.439, R=321.151, B=66.686, W=321.151, H=83.125
+│   ├── CapHeightBounds: L=0, T=-23.028, R=321.151, B=0, W=321.151, H=23.028
+│   ├── ClassId: 0
+│   ├── Font: SKFont { Size = 32.435, Typeface = Bahnschrift }
+│   ├── FontMetricsBounds: L=0, T=-25.752, R=321.151, B=6.683, W=321.151, H=32.435
+│   ├── LineCountInBlock: 3
+│   ├── LineIndexInBlock: 1
+│   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   ├── [textBlockText]: "Wbo
+│   │   │   08b4 7r5 ur 3lommkl2
+│   │   │   Hrrdr"
+│   │   ├── [textBlockId]: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   ├── [textBlockLineIndex]: "1"
+│   │   ├── [textBlockLineCount]: "3"
+│   │   ├── [textBlockTightObb]: "205.55878,259.3591 524.6671,230.67062 532.69763,319.99594 213.5893,348.68442"
+│   │   ├── [textBlockTightBox]: "205.55878,230.67062,532.69763,348.68442"
+│   │   ├── [textBlockFontMetricsObb]: "205.3124,256.6185 525.1737,227.86234 534.0491,326.58478 214.18774,355.34097"
+│   │   ├── [textBlockFontMetricsBox]: "205.3124,227.86234,534.0491,355.34097"
+│   │   ├── [textBlockCapHeightObb]: "205.5563,259.3316 525.4176,230.57544 533.4506,319.92822 213.5893,348.68442"
+│   │   ├── [textBlockCapHeightBox]: "205.5563,230.57544,533.4506,348.68442"
+│   │   ├── [textBlockXHeightObb]: "206.14624,265.8935 526.00757,237.13733 533.4506,319.92822 213.5893,348.68442"
+│   │   └── [textBlockXHeightBox]: "206.14624,237.13733,533.4506,348.68442"
+│   ├── Origin: (207.618, 315.61)
+│   ├── Paint: SKPaint { Color = rgba(9, 45, 16, 251), Style = Fill, StrokeWidth = 0 }
+│   ├── Rotation: -5.1371937
+│   ├── Text: "08b4 7r5 ur 3lommkl2"
+│   ├── TightBounds: L=2, T=-23, R=320.395, B=0, W=318.395, H=23
+│   ├── TotalWidth: 321.15137
+│   └── XHeightBounds: L=0, T=-16.439, R=321.151, B=0, W=321.151, H=16.439
+├── [2]: ObbTextGenerator.TextLineDescriptor
+│   ├── BlockCapHeightBounds: L=0, T=-23.028, R=321.151, B=66.686, W=321.151, H=89.713
+│   ├── BlockFontMetricsBounds: L=0, T=-25.752, R=321.151, B=73.369, W=321.151, H=99.121
+│   ├── BlockId: "46ad2257a85348efb71d952a1b26d2e4"
+│   ├── BlockOrigin: (207.618, 282.267)
+│   ├── BlockTightBounds: L=0, T=-23, R=320.395, B=66.686, W=320.395, H=89.686
+│   ├── BlockXHeightBounds: L=0, T=-16.439, R=321.151, B=66.686, W=321.151, H=83.125
+│   ├── CapHeightBounds: L=0, T=-23.028, R=81.024, B=0, W=81.024, H=23.028
+│   ├── ClassId: 0
+│   ├── Font: SKFont { Size = 32.435, Typeface = Bahnschrift }
+│   ├── FontMetricsBounds: L=0, T=-25.752, R=81.024, B=6.683, W=81.024, H=32.435
+│   ├── LineCountInBlock: 3
+│   ├── LineIndexInBlock: 2
+│   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   ├── [textBlockText]: "Wbo
+│   │   │   08b4 7r5 ur 3lommkl2
+│   │   │   Hrrdr"
+│   │   ├── [textBlockId]: "46ad2257a85348efb71d952a1b26d2e4"
+│   │   ├── [textBlockLineIndex]: "2"
+│   │   ├── [textBlockLineCount]: "3"
+│   │   ├── [textBlockTightObb]: "205.55878,259.3591 524.6671,230.67062 532.69763,319.99594 213.5893,348.68442"
+│   │   ├── [textBlockTightBox]: "205.55878,230.67062,532.69763,348.68442"
+│   │   ├── [textBlockFontMetricsObb]: "205.3124,256.6185 525.1737,227.86234 534.0491,326.58478 214.18774,355.34097"
+│   │   ├── [textBlockFontMetricsBox]: "205.3124,227.86234,534.0491,355.34097"
+│   │   ├── [textBlockCapHeightObb]: "205.5563,259.3316 525.4176,230.57544 533.4506,319.92822 213.5893,348.68442"
+│   │   ├── [textBlockCapHeightBox]: "205.5563,230.57544,533.4506,348.68442"
+│   │   ├── [textBlockXHeightObb]: "206.14624,265.8935 526.00757,237.13733 533.4506,319.92822 213.5893,348.68442"
+│   │   └── [textBlockXHeightBox]: "206.14624,237.13733,533.4506,348.68442"
+│   ├── Origin: (207.618, 348.952)
+│   ├── Paint: SKPaint { Color = rgba(9, 45, 16, 251), Style = Fill, StrokeWidth = 0 }
+│   ├── Rotation: -5.1371937
+│   ├── Text: "Hrrdr"
+│   ├── TightBounds: L=2, T=-23, R=81.182, B=0, W=79.182, H=23
+│   ├── TotalWidth: 81.02428
+│   └── XHeightBounds: L=0, T=-16.439, R=81.024, B=0, W=81.024, H=16.439
+├── [3]: ObbTextGenerator.TextLineDescriptor
+│   ├── BlockCapHeightBounds: L=0, T=-29.464, R=224.09, B=0, W=224.09, H=29.464
+│   ├── BlockFontMetricsBounds: L=0, T=-39.423, R=224.09, B=9.96, W=224.09, H=49.383
+│   ├── BlockId: "1d153bcf69c9477792e8dc63f3b23441"
+│   ├── BlockOrigin: (19.938, 491.961)
+│   ├── BlockTightBounds: L=3, T=-29, R=222.191, B=0, W=219.191, H=29
+│   ├── BlockXHeightBounds: L=0, T=-21.994, R=224.09, B=0, W=224.09, H=21.994
+│   ├── CapHeightBounds: L=0, T=-29.464, R=224.09, B=0, W=224.09, H=29.464
+│   ├── ClassId: 0
+│   ├── Font: SKFont { Size = 42.494, Typeface = Cascadia Mono }
+│   ├── FontMetricsBounds: L=0, T=-39.423, R=224.09, B=9.96, W=224.09, H=49.383
+│   ├── LineCountInBlock: 1
+│   ├── LineIndexInBlock: 0
+│   ├── Metadata: Dictionary`2 (Count = 12)
+│   │   ├── [textBlockText]: "BOX-AA-46"
+│   │   ├── [textBlockId]: "1d153bcf69c9477792e8dc63f3b23441"
+│   │   ├── [textBlockLineIndex]: "0"
+│   │   ├── [textBlockLineCount]: "1"
+│   │   ├── [textBlockTightObb]: "25.204334,463.28583 243.71927,480.48737 241.44342,509.39792 22.92849,492.19638"
+│   │   ├── [textBlockTightBox]: "22.92849,463.28583,243.71927,509.39792"
+│   │   ├── [textBlockFontMetricsObb]: "23.031576,452.6593 246.43027,470.2453 242.55484,519.4757 19.156141,501.88977"
+│   │   ├── [textBlockFontMetricsBox]: "19.156141,452.6593,246.43027,519.4757"
+│   │   ├── [textBlockCapHeightObb]: "22.249975,462.58817 245.64868,480.17416 243.33643,509.54694 19.937742,491.96094"
+│   │   ├── [textBlockCapHeightBox]: "19.937742,462.58817,245.64868,509.54694"
+│   │   ├── [textBlockXHeightObb]: "21.663774,470.0348 245.06247,487.6208 243.33643,509.54694 19.937742,491.96094"
+│   │   └── [textBlockXHeightBox]: "19.937742,470.0348,245.06247,509.54694"
+│   ├── Origin: (19.938, 491.961)
+│   ├── Paint: SKPaint { Color = rgba(98, 22, 64, 232), Style = Fill, StrokeWidth = 0 }
+│   ├── Rotation: 4.5010557
+│   ├── Text: "BOX-AA-46"
+│   ├── TightBounds: L=3, T=-29, R=222.191, B=0, W=219.191, H=29
+│   ├── TotalWidth: 224.08981
+│   └── XHeightBounds: L=0, T=-21.994, R=224.09, B=0, W=224.09, H=21.994
+└── [4]: ObbTextGenerator.TextLineDescriptor
+    ├── BlockCapHeightBounds: L=0, T=-32.417, R=219.159, B=0, W=219.159, H=32.417
+    ├── BlockFontMetricsBounds: L=0, T=-43.375, R=219.159, B=10.958, W=219.159, H=54.333
+    ├── BlockId: "c9feaaa7e4f84e6b94a28cec05d681fe"
+    ├── BlockOrigin: (31.321, 253.822)
+    ├── BlockTightBounds: L=3, T=-33, R=216.764, B=0, W=213.764, H=33
+    ├── BlockXHeightBounds: L=0, T=-24.199, R=219.159, B=0, W=219.159, H=24.199
+    ├── CapHeightBounds: L=0, T=-32.417, R=219.159, B=0, W=219.159, H=32.417
+    ├── ClassId: 0
+    ├── Font: SKFont { Size = 46.754, Typeface = Cascadia Mono }
+    ├── FontMetricsBounds: L=0, T=-43.375, R=219.159, B=10.958, W=219.159, H=54.333
+    ├── LineCountInBlock: 1
+    ├── LineIndexInBlock: 0
+    ├── Metadata: Dictionary`2 (Count = 12)
+    │   ├── [textBlockText]: "ZONE P-2"
+    │   ├── [textBlockId]: "c9feaaa7e4f84e6b94a28cec05d681fe"
+    │   ├── [textBlockLineIndex]: "0"
+    │   ├── [textBlockLineCount]: "1"
+    │   ├── [textBlockTightObb]: "25.165314,221.26318 230.75014,162.69739 239.79128,194.4347 34.20645,253.00049"
+    │   ├── [textBlockTightBox]: "25.165314,162.69739,239.79128,253.00049"
+    │   ├── [textBlockFontMetricsObb]: "19.437569,212.10687 230.21083,152.06302 245.09673,204.31723 34.32344,264.36108"
+    │   ├── [textBlockFontMetricsBox]: "19.437569,152.06302,245.09673,264.36108"
+    │   ├── [textBlockCapHeightObb]: "22.439758,222.64554 233.21303,162.60168 242.09453,193.77856 31.321243,253.82242"
+    │   ├── [textBlockCapHeightBox]: "22.439758,162.60168,242.09453,253.82242"
+    │   ├── [textBlockXHeightObb]: "24.691406,230.54953 235.46468,170.50568 242.09453,193.77856 31.321243,253.82242"
+    │   └── [textBlockXHeightBox]: "24.691406,170.50568,242.09453,253.82242"
+    ├── Origin: (31.321, 253.822)
+    ├── Paint: SKPaint { Color = rgba(26, 11, 25, 243), Style = Fill, StrokeWidth = 0 }
+    ├── Rotation: -15.900881
+    ├── Text: "ZONE P-2"
+    ├── TightBounds: L=3, T=-33, R=216.764, B=0, W=213.764, H=33
+    ├── TotalWidth: 219.15892
+    └── XHeightBounds: L=0, T=-24.199, R=219.159, B=0, W=219.159, H=24.199
+
+
+================================================================================
+RenderContext.AnnotationLayers.Tree
+================================================================================
+RenderContext.AnnotationLayers.Tree: Dictionary`2 (Count = 6)
+├── [collision]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 5)
+│       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.559, 259.359)
+│       │   │   ├── [1]: (266.418, 253.888)
+│       │   │   ├── [2]: (268.478, 276.795)
+│       │   │   └── [3]: (207.618, 282.267)
+│       │   └── Text: "Wbo"
+│       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (207.551, 292.523)
+│       │   │   ├── [1]: (524.667, 264.013)
+│       │   │   ├── [2]: (526.727, 286.921)
+│       │   │   └── [3]: (209.61, 315.43)
+│       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (207.551, 325.866)
+│       │   │   ├── [1]: (286.415, 318.776)
+│       │   │   ├── [2]: (288.475, 341.683)
+│       │   │   └── [3]: (209.61, 348.773)
+│       │   └── Text: "Hrrdr"
+│       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (25.204, 463.286)
+│       │   │   ├── [1]: (243.719, 480.487)
+│       │   │   ├── [2]: (241.443, 509.398)
+│       │   │   └── [3]: (22.928, 492.196)
+│       │   └── Text: "BOX-AA-46"
+│       └── [4]: ObbTextGenerator.ShapeAnnotation
+│           ├── ClassId: 0
+│           ├── Metadata: Dictionary`2 (Count = 0)
+│           ├── Points: SKPoint[] (Count = 4)
+│           │   ├── [0]: (25.165, 221.263)
+│           │   ├── [1]: (230.75, 162.697)
+│           │   ├── [2]: (239.791, 194.435)
+│           │   └── [3]: (34.206, 253.001)
+│           └── Text: "ZONE P-2"
+├── [debug_box]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 5)
+│       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.312, 250.997)
+│       │   │   ├── [1]: (270.744, 250.997)
+│       │   │   ├── [2]: (270.744, 288.923)
+│       │   │   └── [3]: (205.312, 288.923)
+│       │   └── Text: "Wbo"
+│       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.312, 261.205)
+│       │   │   ├── [1]: (528.078, 261.205)
+│       │   │   ├── [2]: (528.078, 322.266)
+│       │   │   └── [3]: (205.312, 322.266)
+│       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.312, 316.049)
+│       │   │   ├── [1]: (288.916, 316.049)
+│       │   │   ├── [2]: (288.916, 355.609)
+│       │   │   └── [3]: (205.312, 355.609)
+│       │   └── Text: "Hrrdr"
+│       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (19.156, 452.659)
+│       │   │   ├── [1]: (246.43, 452.659)
+│       │   │   ├── [2]: (246.43, 519.476)
+│       │   │   └── [3]: (19.156, 519.476)
+│       │   └── Text: "BOX-AA-46"
+│       └── [4]: ObbTextGenerator.ShapeAnnotation
+│           ├── ClassId: 0
+│           ├── Metadata: Dictionary`2 (Count = 0)
+│           ├── Points: SKPoint[] (Count = 4)
+│           │   ├── [0]: (19.438, 152.063)
+│           │   ├── [1]: (245.097, 152.063)
+│           │   ├── [2]: (245.097, 264.361)
+│           │   └── [3]: (19.438, 264.361)
+│           └── Text: "ZONE P-2"
+├── [debug_obb_font]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 5)
+│       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.312, 256.619)
+│       │   │   ├── [1]: (267.84, 250.997)
+│       │   │   ├── [2]: (270.744, 283.302)
+│       │   │   └── [3]: (208.217, 288.923)
+│       │   └── Text: "Wbo"
+│       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.312, 289.961)
+│       │   │   ├── [1]: (525.174, 261.205)
+│       │   │   ├── [2]: (528.078, 293.51)
+│       │   │   └── [3]: (208.217, 322.266)
+│       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (205.312, 323.304)
+│       │   │   ├── [1]: (286.011, 316.049)
+│       │   │   ├── [2]: (288.916, 348.354)
+│       │   │   └── [3]: (208.217, 355.609)
+│       │   └── Text: "Hrrdr"
+│       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (23.032, 452.659)
+│       │   │   ├── [1]: (246.43, 470.245)
+│       │   │   ├── [2]: (242.555, 519.476)
+│       │   │   └── [3]: (19.156, 501.89)
+│       │   └── Text: "BOX-AA-46"
+│       └── [4]: ObbTextGenerator.ShapeAnnotation
+│           ├── ClassId: 0
+│           ├── Metadata: Dictionary`2 (Count = 0)
+│           ├── Points: SKPoint[] (Count = 4)
+│           │   ├── [0]: (19.438, 212.107)
+│           │   ├── [1]: (230.211, 152.063)
+│           │   ├── [2]: (245.097, 204.317)
+│           │   └── [3]: (34.323, 264.361)
+│           └── Text: "ZONE P-2"
+├── [debug_xheight]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 5)
+│       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (206.146, 265.894)
+│       │   │   ├── [1]: (268.674, 260.272)
+│       │   │   ├── [2]: (270.146, 276.645)
+│       │   │   └── [3]: (207.618, 282.267)
+│       │   └── Text: "Wbo"
+│       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (206.146, 299.236)
+│       │   │   ├── [1]: (526.008, 270.48)
+│       │   │   ├── [2]: (527.48, 286.853)
+│       │   │   └── [3]: (207.618, 315.61)
+│       │   └── Text: "08b4 7r5 ur 3lommkl2"
+│       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (206.146, 332.579)
+│       │   │   ├── [1]: (286.845, 325.324)
+│       │   │   ├── [2]: (288.317, 341.697)
+│       │   │   └── [3]: (207.618, 348.952)
+│       │   └── Text: "Hrrdr"
+│       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (21.664, 470.035)
+│       │   │   ├── [1]: (245.063, 487.621)
+│       │   │   ├── [2]: (243.336, 509.547)
+│       │   │   └── [3]: (19.938, 491.961)
+│       │   └── Text: "BOX-AA-46"
+│       └── [4]: ObbTextGenerator.ShapeAnnotation
+│           ├── ClassId: 0
+│           ├── Metadata: Dictionary`2 (Count = 0)
+│           ├── Points: SKPoint[] (Count = 4)
+│           │   ├── [0]: (24.691, 230.55)
+│           │   ├── [1]: (235.465, 170.506)
+│           │   ├── [2]: (242.095, 193.779)
+│           │   └── [3]: (31.321, 253.822)
+│           └── Text: "ZONE P-2"
+├── [paddledet_obb]: ObbTextGenerator.AnnotationLayer
+│   └── Annotations: List`1 (Count = 5)
+│       ├── [0]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (18.066, 468.423)
+│       │   │   ├── [1]: (249.267, 486.919)
+│       │   │   ├── [2]: (247.94, 503.498)
+│       │   │   └── [3]: (16.74, 485.002)
+│       │   └── Text: "paddledet"
+│       ├── [1]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (206.768, 328.545)
+│       │   │   ├── [1]: (298.146, 319.759)
+│       │   │   ├── [2]: (299.919, 338.197)
+│       │   │   └── [3]: (208.541, 346.983)
+│       │   └── Text: "paddledet"
+│       ├── [2]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (204.726, 296.714)
+│       │   │   ├── [1]: (532.256, 268.479)
+│       │   │   ├── [2]: (533.399, 281.741)
+│       │   │   └── [3]: (205.87, 309.976)
+│       │   └── Text: "paddledet"
+│       ├── [3]: ObbTextGenerator.ShapeAnnotation
+│       │   ├── ClassId: 0
+│       │   ├── Metadata: Dictionary`2 (Count = 0)
+│       │   ├── Points: SKPoint[] (Count = 4)
+│       │   │   ├── [0]: (199.503, 260.099)
+│       │   │   ├── [1]: (272.92, 253.981)
+│       │   │   ├── [2]: (274.649, 274.722)
+│       │   │   └── [3]: (201.231, 280.84)
+│       │   └── Text: "paddledet"
+│       └── [4]: ObbTextGenerator.ShapeAnnotation
+│           ├── ClassId: 0
+│           ├── Metadata: Dictionary`2 (Count = 0)
+│           ├── Points: SKPoint[] (Count = 4)
+│           │   ├── [0]: (15.864, 223.218)
+│           │   ├── [1]: (240.782, 162.942)
+│           │   ├── [2]: (248.264, 190.859)
+│           │   └── [3]: (23.346, 251.135)
+│           └── Text: "paddledet"
+└── [debug_paddledet]: ObbTextGenerator.AnnotationLayer
+    └── Annotations: List`1 (Count = 5)
+        ├── [0]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (18.066, 468.423)
+        │   │   ├── [1]: (249.267, 486.919)
+        │   │   ├── [2]: (247.94, 503.498)
+        │   │   └── [3]: (16.74, 485.002)
+        │   └── Text: "paddledet"
+        ├── [1]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (206.768, 328.545)
+        │   │   ├── [1]: (298.146, 319.759)
+        │   │   ├── [2]: (299.919, 338.197)
+        │   │   └── [3]: (208.541, 346.983)
+        │   └── Text: "paddledet"
+        ├── [2]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (204.726, 296.714)
+        │   │   ├── [1]: (532.256, 268.479)
+        │   │   ├── [2]: (533.399, 281.741)
+        │   │   └── [3]: (205.87, 309.976)
+        │   └── Text: "paddledet"
+        ├── [3]: ObbTextGenerator.ShapeAnnotation
+        │   ├── ClassId: 0
+        │   ├── Metadata: Dictionary`2 (Count = 0)
+        │   ├── Points: SKPoint[] (Count = 4)
+        │   │   ├── [0]: (199.503, 260.099)
+        │   │   ├── [1]: (272.92, 253.981)
+        │   │   ├── [2]: (274.649, 274.722)
+        │   │   └── [3]: (201.231, 280.84)
+        │   └── Text: "paddledet"
+        └── [4]: ObbTextGenerator.ShapeAnnotation
+            ├── ClassId: 0
+            ├── Metadata: Dictionary`2 (Count = 0)
+            ├── Points: SKPoint[] (Count = 4)
+            │   ├── [0]: (15.864, 223.218)
+            │   ├── [1]: (240.782, 162.942)
+            │   ├── [2]: (248.264, 190.859)
+            │   └── [3]: (23.346, 251.135)
+            └── Text: "paddledet"
+
+
+================================================================================
+RenderContext.SampleData.Tree
+================================================================================
+RenderContext.SampleData.Tree: Dictionary`2 (Count = 2)
+├── [paddledet.mask]: Mat [ 640*640*CV_32FC1, IsContinuous=True, IsSubmatrix=False, Ptr=0x1b5f56fcfa0, Data=0x1b504456080 ]
+│   ├── Cols: 640
+│   ├── CvPtr: 1881018453920
+│   ├── Data: 1876972363904
+│   ├── DataEnd: 1876974002304
+│   ├── DataLimit: 1876974002304
+│   ├── DataPointer: System.Reflection.Pointer
+│   ├── DataStart: 1876972363904
+│   ├── Dims: 2
+│   ├── Flags: 1124024325
+│   ├── Height: 640
+│   ├── IsDisposed: false
+│   ├── IsEnabledDispose: true
+│   ├── Rows: 640
+│   └── Width: 640
+└── [paddledet.polygons]: List`1 (Count = 5)
+    ├── [0]: SKPoint[] (Count = 4)
+    │   ├── [0]: (18.066, 468.423)
+    │   ├── [1]: (249.267, 486.919)
+    │   ├── [2]: (247.94, 503.498)
+    │   └── [3]: (16.74, 485.002)
+    ├── [1]: SKPoint[] (Count = 4)
+    │   ├── [0]: (206.768, 328.545)
+    │   ├── [1]: (298.146, 319.759)
+    │   ├── [2]: (299.919, 338.197)
+    │   └── [3]: (208.541, 346.983)
+    ├── [2]: SKPoint[] (Count = 4)
+    │   ├── [0]: (204.726, 296.714)
+    │   ├── [1]: (532.256, 268.479)
+    │   ├── [2]: (533.399, 281.741)
+    │   └── [3]: (205.87, 309.976)
+    ├── [3]: SKPoint[] (Count = 4)
+    │   ├── [0]: (199.503, 260.099)
+    │   ├── [1]: (272.92, 253.981)
+    │   ├── [2]: (274.649, 274.722)
+    │   └── [3]: (201.231, 280.84)
+    └── [4]: SKPoint[] (Count = 4)
+        ├── [0]: (15.864, 223.218)
+        ├── [1]: (240.782, 162.942)
+        ├── [2]: (248.264, 190.859)
+        └── [3]: (23.346, 251.135)
+
+
+================================================================================
+RenderContext.TraceEntries.Tree
+================================================================================
+RenderContext.TraceEntries.Tree: List`1 (Count = 36)
+├── [0]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: <null>
+│   └── Summary: "scheme-selector: neutral-demo"
+├── [1]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: <null>
+│   └── Summary: "program: scene-demo"
+├── [2]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 1
+│   ├── Details: <null>
+│   └── Summary: "select: scene-source"
+├── [3]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 2
+│   ├── Details: <null>
+│   └── Summary: "select scene-source -> scene-source-procedural-with-text"
+├── [4]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 2
+│   ├── Details: <null>
+│   └── Summary: "program: scene-source-procedural-with-text"
+├── [5]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 3
+│   ├── Details: <null>
+│   └── Summary: "select: scene-base"
+├── [6]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "select scene-base -> base-material"
+├── [7]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "program: base-material"
+├── [8]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "background-fill"
+├── [9]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "tiled-pattern"
+├── [10]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "tiled-pattern: woven-cross"
+├── [11]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "noise-background"
+├── [12]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 3
+│   ├── Details: <null>
+│   └── Summary: "program: text-demo"
+├── [13]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "text-line-stage class=0"
+├── [14]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "text-line: class=0 generated=1"
+├── [15]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "text-line-stage class=0"
+├── [16]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "text-line: class=0 generated=1"
+├── [17]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "text-line-stage class=0"
+├── [18]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "text-line: class=0 generated=1"
+├── [19]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 3
+│   ├── Details: <null>
+│   └── Summary: "select: wear"
+├── [20]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "select wear -> wear-small"
+├── [21]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "program: wear-small"
+├── [22]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "tiled-pattern"
+├── [23]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "tiled-pattern: fine-speckles"
+├── [24]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 3
+│   ├── Details: <null>
+│   └── Summary: "select: light"
+├── [25]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "select light -> light-bright"
+├── [26]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 4
+│   ├── Details: <null>
+│   └── Summary: "program: light-bright"
+├── [27]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "spotlight"
+├── [28]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 5
+│   ├── Details: <null>
+│   └── Summary: "camera-effects"
+├── [29]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "file=016031.jpg"
+│   └── Summary: "write-image: images"
+├── [30]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source=text-lines layer=debug_box"
+│   └── Summary: "write-yolo-box: labels_box"
+├── [31]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source=text-lines layer=debug_obb_font"
+│   └── Summary: "write-yolo-obb: labels_obb_font"
+├── [32]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source=text-lines layer=debug_xheight"
+│   └── Summary: "write-yolo-obb: labels_obb_xheight"
+├── [33]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "layer=paddledet_obb image=640x640 model=C:\GitKOE\ObbTextGenerator\models\paddleocr\detection\v5\det.onnx backend=Cuda accessMode=PerThread 
+│   │   mask=640x640 maskKey=paddledet.mask polygonsKey=paddledet.polygons"
+│   └── Summary: "paddledet"
+├── [34]: ObbTextGenerator.RenderTraceEntry
+│   ├── Depth: 0
+│   ├── Details: "source-layer=paddledet_obb feedback-layer=debug_paddledet written=5 skipped=0"
+│   └── Summary: "write-yolo-obb-layer: labels_obb_paddledet"
+└── [35]: ObbTextGenerator.RenderTraceEntry
+    ├── Depth: 0
+    ├── Details: "file=016031.jpg"
+    └── Summary: "debug-preview: debug_preview"
+
+

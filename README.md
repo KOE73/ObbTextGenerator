@@ -1,4 +1,4 @@
-# OBB Text Dataset Generator
+﻿# OBB Text Dataset Generator
 
 **ObbTextGenerator** is a .NET tool for generating synthetic images with text-line annotations for OCR detection experiments.
 
@@ -12,6 +12,18 @@ The current public entry point is the `demo/` folder. It contains the runnable d
 - optional PaddleDet-derived labels;
 - debug previews;
 - context dumps for inspection.
+
+## Generated Samples
+
+Example outputs:
+
+| Sample | Image | Debug Preview |
+|---|---|---|
+| Image<br/>PaddleDet                            | <img src="doc/generated/images/016001.jpg" height="220"> | <img src="doc/generated/debug_preview/016001.jpg" height="220"> |
+| Light Sheme<br/>Pattern<br/>Text<br/>PaddleDet | <img src="doc/generated/images/016031.jpg" height="220"> | <img src="doc/generated/debug_preview/016031.jpg" height="220"> |
+| Dark  Sheme<br/>Pattern<br/>Text<br/>PaddleDet | <img src="doc/generated/images/016271.jpg" height="220"> | <img src="doc/generated/debug_preview/016271.jpg" height="220"> |
+
+Full generated artifacts, including labels and context dumps, are in [`doc/generated`](doc/generated).
 
 ## Requirements
 
